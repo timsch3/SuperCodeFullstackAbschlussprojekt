@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <>
             <Titel />
-            This is Yoga!
+            This is Home!
             <Nav />
         </>
     );
