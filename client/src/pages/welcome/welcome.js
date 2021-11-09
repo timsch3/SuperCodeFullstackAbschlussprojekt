@@ -1,4 +1,4 @@
-import './login.scss'
+import './welcome.scss'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
