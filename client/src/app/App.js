@@ -1,10 +1,10 @@
 import '../style/style.scss'
-import Login from '../components/login/login'
-import Home from '../components/home/home'
-import Yoga from '../components/yoga/yoga'
-import Meditate from '../components/meditate/meditate'
-import Music from '../components/music/music'
-import User from '../components/user/user'
+import Login from '../pages/login/login'
+import Home from '../pages/home/home'
+import Yoga from '../pages/yoga/yoga'
+import Meditate from '../pages/meditate/meditate'
+import Music from '../pages/music/music'
+import User from '../pages/user/user'
 
 import {
   BrowserRouter,
@@ -26,7 +26,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-
   );
 }
 
