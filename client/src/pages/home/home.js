@@ -1,10 +1,14 @@
 import './home.scss'
+import Titel from '../../components/titel/titel'
+import Nav from '../../components/nav/nav'
 
 const Home = () => {
     return (
-        <div>
-            This Home
-        </div>
+        <>
+            <Titel />
+            This is Yoga!
+            <Nav />
+        </>
     );
 }
 
