@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import Search from '../../components/search/search';
 
 const Home = () => {
+
+
+
     return (
         <>
             <Titel />
