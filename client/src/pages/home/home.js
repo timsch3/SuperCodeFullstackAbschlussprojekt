@@ -3,8 +3,24 @@ import Titel from '../../components/titel/titel'
 import Nav from '../../components/nav/nav'
 import { Link } from 'react-router-dom';
 import Search from '../../components/search/search';
+import { useState, useEffect} from 'react'
 
 const Home = () => {
+      const [data,setData] = useState(null)
+    const [isReady,setIsReady] = useState()
+    useEffect(()=>{
+        fetch('http://localhost:3000/home')
+        .then(res => res.json())
+        .then(response =>{
+            console.log(response)
+            //console.log(data1.playLists[0].description) 
+           
+            //data1 ? setIsReady(true):setIsReady(false)
+            setData(response)})
+            
+           
+        
+    },[])  
     return (
         <>
             <Titel />
