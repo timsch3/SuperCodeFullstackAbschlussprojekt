@@ -1,34 +1,23 @@
 @font-face {
     font-family: 'sans-regular';
     src: url('../style/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf'); 
-  }
+}
 @font-face {
     font-family: 'sans-bold';
     src: url('../style/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf'); 
-  }
+}
+
+* {
+  font-family: 'sans-regular';
+  padding: 0;
+  margin: 0;
+}
 
 body {
-    margin: 0;
-    color: #4A503D;
+  background-color: #E5E5E5;
 }
 
-a {
-    font-family: 'sans-regular';
-}
-
-span {
-  font-family: 'sans-regular';
-}
-
-h1 {
-    font-family: 'sans-bold';
-    font-size: 16px;
-}
-
-h2 {
-    font-family: 'sans-bold';
-}
-
-p {
-  font-family: 'sans-regular';
+h1, h2, h3, h4, h5 {
+  font-family: 'sans-bold';
+  color: #4A503D;
 }
