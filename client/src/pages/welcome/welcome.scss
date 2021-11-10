@@ -1,4 +1,39 @@
-ul{
+
+// welcome
+.welcom-content {
+    height: 100vh;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    background: url('./welcome.jpg') no-repeat;
+    background-position: center top;
 }
+
+.welcom-content h2 {
+    font-family: 'sans-bold';
+    font-size: 36px;
+    margin-left: -100px;
+    position: absolute;
+    color: #fff;
+    top: 10vh;
+}
+
+.but-but {
+    position: absolute;
+    bottom: 30px;
+}
+
+//reminders
+.reminders {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reminders-content {
+    padding: 10% 10%;
+    width: 600px;
+}
+

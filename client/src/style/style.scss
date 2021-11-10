@@ -7,11 +7,28 @@
     src: url('../style/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf'); 
   }
 
+body {
+    margin: 0;
+    color: #4A503D;
+}
+
 a {
     font-family: 'sans-regular';
+}
+
+span {
+  font-family: 'sans-regular';
 }
 
 h1 {
     font-family: 'sans-bold';
     font-size: 16px;
+}
+
+h2 {
+    font-family: 'sans-bold';
+}
+
+p {
+  font-family: 'sans-regular';
 }

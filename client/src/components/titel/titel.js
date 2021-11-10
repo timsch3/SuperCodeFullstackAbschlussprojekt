@@ -2,9 +2,9 @@ import './titel.scss'
 
 const Titel = () => {
     return (
-        <header>
+        <div className="titel">
             <h1>SILENT MOON</h1>
-        </header>
+        </div>
     );
 }
 

@@ -7,6 +7,7 @@ import Music from '../pages/music/music'
 import User from '../pages/user/user'
 
 import data from '../data/data'
+import { useState } from 'react'
 
 import {
   BrowserRouter,
@@ -16,12 +17,13 @@ import {
 
 function App() {
 
-  console.log(data)
+  const [loginData, setLoginData] = useState(data)
+
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route path="/" element={<Welcome loginData={loginData} />} />
         <Route path="/home" element={<Home />} />
         <Route path="/yoga" element={<Yoga />} />
         <Route path="/meditate" element={<Meditate />} />
