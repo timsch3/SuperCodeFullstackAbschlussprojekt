@@ -6,11 +6,7 @@ import Search from '../../components/search/search';
 import { useState, useEffect } from 'react'
 
 const Home = () => {
-<<<<<<< HEAD
-    const [data, setData] = useState()
-=======
     const [data, setData] = useState(null)
->>>>>>> cadf8ad7fe61bed77349b7f2d42b0134297bcbf8
     const [isReady, setIsReady] = useState(false)
     useEffect(() => {
         fetch('http://localhost:3000/home')
