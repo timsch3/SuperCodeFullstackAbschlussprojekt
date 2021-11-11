@@ -6,7 +6,6 @@ import Search from '../../components/search/search';
 import { useState, useEffect } from 'react'
 
 const Home = () => {
-
     const [data, setData] = useState(null)
     const [isReady, setIsReady] = useState()
     useEffect(() => {
