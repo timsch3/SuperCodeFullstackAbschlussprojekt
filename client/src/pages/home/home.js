@@ -12,9 +12,6 @@ const Home = () => {
         fetch('http://localhost:3000/home')
             .then(res => res.json())
             .then(response => {
-                console.log(response)
-                //console.log(data1.playLists[0].description) 
-                //data1 ? setIsReady(true):setIsReady(false)
                 setData(response)
             })
     }, [])
@@ -51,43 +48,29 @@ const Home = () => {
                 <div id={'home-recommended-yoga'}>
                     <h2>Recommended yoga for you</h2>
                     <div id={'home-recommended-yoga-cards'}>
-                        <div className={'home-recommended-yoga-card'}>
-                            <img src="/images/home/fatburner.png" alt="Fatburner" />
-                            <h3>Fatburner</h3>
-                            <div>
-                                <p>BEGINNER</p>
-                                <p>3 - 10 MIN</p>
-                            </div>
-                        </div>
-                        <div className={'home-recommended-yoga-card'}>
-                            <img src="/images/home/recovery.png" alt="Recovery" />
-                            <h3>Fatburner</h3>
-                            <div>
-                                <p>EXPERT</p>
-                                <p>3 - 10 MIN</p>
-                            </div>
-                        </div>
+                        {data.yoga.map((elt) => {
+                            return (
+                                <div className={'home-recommended-yoga-card'}>
+                                    <img src={elt.track.album.images[0].url} alt={elt.track.name} />
+                                    <h3>{elt.track.name}</h3>
+                                    <p>{(elt.track.duration_ms * 0.000016666666666667).toFixed(0)} MIN</p>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
                 <div id={'home-recommended-meditation'}>
                     <h2>Recommended meditation for you</h2>
                     <div id={'home-recommended-meditation-cards'}>
-                        <div className={'home-recommended-meditation-card'}>
-                            <img src="/images/home/focus.png" alt="Focus" />
-                            <h3>Fatburner</h3>
-                            <div>
-                                <p>BEGINNER</p>
-                                <p>3 - 10 MIN</p>
-                            </div>
-                        </div>
-                        <div className={'home-recommended-meditation-card'}>
-                            <img src="/images/home/refresh.png" alt="Refresh" />
-                            <h3>Fatburner</h3>
-                            <div>
-                                <p>EXPERT</p>
-                                <p>3 - 10 MIN</p>
-                            </div>
-                        </div>
+                        {data.meditation.map((elt) => {
+                            return (
+                                <div className={'home-recommended-yoga-card'}>
+                                    <img src={elt.track.album.images[0].url} alt={elt.track.name} />
+                                    <h3>{elt.track.name}</h3>
+                                    <p>{(elt.track.duration_ms * 0.000016666666666667).toFixed(0)} MIN</p>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </main>
