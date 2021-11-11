@@ -1,66 +1,94 @@
-.content {
-    background: #fff;
-    height: 100vh;
-}
 
-// welcome
-.welcom-content {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: url('./welcome.jpg') no-repeat;
-    background-position: center top;
-}
-
-.welcom-content h2 {
-    font-family: 'sans-bold';
-    font-size: 36px;
-    margin-left: -100px;
-    position: absolute;
-    color: #fff;
-    top: 10vh;
-}
-
-.but-but {
-    position: absolute;
-    bottom: 30px;
-}
+    .content-wel {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: url('./welcome.jpg') no-repeat;
+        background-position: center top;
+        h2 {
+            font-family: 'sans-bold';
+            font-size: 36px;
+            margin-left: -100px;
+            position: absolute;
+            color: #fff;
+            top: 10vh;
+        }
+    }
+    .but-but {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
 
 //reminders
 .reminders {
-    padding: 5% 0;
+    top: 7vh;
     width: 100%;
+    height: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    .remindersCont {
+        padding: 0 15px;
+        .remindersText {
+            width: 100%;
+            p {
+                color: #A1A4B2;
+            }
+        }
+        .timePicker {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 5% 0;
+        }
+        .daysList {
+            width: 100%;
+            margin: 20px 0;
+            ul{
+                width: 100%;
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                li{
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50px;
+                    background: #8E9775;
+                    &:nth-of-type(5){
+                        border: 1px solid #8E9775;
+                        background: #fff;
+                        span {
+                            color: #8E9775;
+                        }
+                    }
+                    &:nth-of-type(6){
+                        border: 1px solid #8E9775;
+                        background: #fff;
+                        span {
+                            color: #8E9775;
+                        }
+                    }
+                    span{
+                        color: #fff;
+                    }
+                }
+            }  
+        } 
+    }
 }
 
-.remindersText {
-    width: 374px;
-}
 
-.remindersText h2{
-    font-size: 24px;
-}
-.remindersText p {
-    font-size: 16px;
-    color: #A1A4B2;
-}
 
-.timePicker {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1% 0;
-}
-
-.daysList ul{
-    width: 374px;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-}

@@ -1,0 +1,42 @@
+#user-main {
+    padding: 15px;
+    h2 {
+        font-size: 1.25rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 0.75rem;
+    }
+    #we-hope {
+        margin: 20px 0;
+        color: #A1A4B2;
+    }
+    overflow: hidden;
+}
+
+#user-profile { // ==================== User profile
+    max-width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+#user-favs-yoga, #user-favs-meditation { // ==================== Recommended yoga
+    h2 {
+        padding-bottom: 20px;
+    }
+    img {
+        max-width: 35vw;
+    }
+}
+#user-favs-yoga {
+    padding-bottom: 40px;
+}
+#user-favs-yoga-cards, #user-favs-meditation-cards {
+    display: flex;
+    overflow-x: scroll;
+}
+.user-favs-yoga-card, .user-favs-meditation-card {
+    padding-right: 20px;
+}
