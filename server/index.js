@@ -35,8 +35,9 @@ spotifyApi
 app.get('/',(req,res) =>{
     res.send('hello world')
 })
-
+//db Crud routing
 app.use('/api',dbRouter)
+//API
 app.use('/home',homeRouter)
 
 app.listen(process.env.PORT,()=>console.log('i am Listening at',process.env.PORT))
