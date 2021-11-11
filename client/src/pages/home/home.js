@@ -6,13 +6,14 @@ import Search from '../../components/search/search';
 import { useState, useEffect } from 'react'
 
 const Home = () => {
-    const [data, setData] = useState(null)
-    const [isReady, setIsReady] = useState()
+    const [data, setData] = useState()
+    const [isReady, setIsReady] = useState(false)
     useEffect(() => {
         fetch('http://localhost:3000/home')
             .then(res => res.json())
             .then(response => {
                 setData(response)
+                setIsReady(true)
             })
     }, [])
 
