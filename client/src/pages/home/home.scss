@@ -13,6 +13,7 @@
         margin: 20px 0;
         color: #A1A4B2;
     }
+    overflow: hidden;
 }
 
 #home-lessons { // ==================== Top lessons
@@ -82,6 +83,7 @@
 }
 #home-recommended-yoga-cards, #home-recommended-meditation-cards {
     display: flex;
+    overflow-x: scroll;
 }
 .home-recommended-yoga-card, .home-recommended-meditation-card {
     padding-right: 20px;
