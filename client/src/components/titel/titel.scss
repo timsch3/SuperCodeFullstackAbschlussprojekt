@@ -4,9 +4,12 @@
     align-items: center;
     height: 50px;
     width: 100%;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    font-size: .4em;
 }
 
 .titel h1 {
     letter-spacing: 5px;
+    font-size: 16px;
 }
