@@ -29,7 +29,7 @@ const Login = (props) => {
     const getWelcome = () => {
 
         return (
-            <>
+            <div className="content">
                 <Titel />
                 <div className="welcom-content">
                     <h2>Hi Uladzimir,<br />
@@ -40,37 +40,49 @@ const Login = (props) => {
                         <Button onClick={toggle} name={'GET STARTED'} />
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 
     const getReminders = () => {
         return (
-            <>
+            <div className="content">
                 <Titel />
                 <div className="reminders">
-                    <div className="reminders-content">
-                        <div style={{ width: '100%' }}>
-                            <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                <StaticTimePicker
-                                    displayStaticWrapperAs="mobile"
-                                    value={value}
-                                    onChange={(newValue) => {
-                                        setValue(newValue);
-                                    }}
-                                    renderInput={(params) => <TextField {...params} />}
-                                />
-                            </LocalizationProvider>
-                        </div>
-                        {/* <h2>What time would you<br />
+                    <div className="remindersText">
+                        <h2>What time would you<br />
                             like to meditate?</h2>
                         <p>Any time you can choose but We<br />
-                            recommend first thing in th morning.</p>
+                            recommend first thing in the morning.</p>
+                    </div>
+                    <div className="timePicker">
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                            <StaticTimePicker
+                                displayStaticWrapperAs="mobile"
+                                value={value}
+                                onChange={(newValue) => {
+                                    setValue(newValue);
+                                }}
+                                renderInput={(params) => <TextField {...params} />}
+                            />
+                        </LocalizationProvider>
+                    </div>
+                    <div className="remindersText">
                         <h2>Any time you can choose but We<br />
-                            recommend first thing in th morning.</h2>
+                            recommend first thing in the morning.</h2>
                         <p>Everyday is best, but we recommend<br />
-                            picking<br />
-                            at least five.</p> */}
+                            picking at least five.</p>
+                    </div>
+                    <div className="daysList">
+                        <ul>
+                            <li><span>SU</span></li>
+                            <li><span>M</span></li>
+                            <li><span>T</span></li>
+                            <li><span>W</span></li>
+                            <li><span>TH</span></li>
+                            <li><span>F</span></li>
+                            <li><span>S</span></li>
+                        </ul>
                     </div>
                     <div className="but-but">
                         <Link to="/home">
@@ -78,7 +90,7 @@ const Login = (props) => {
                         </Link>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 

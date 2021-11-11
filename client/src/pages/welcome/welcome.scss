@@ -1,3 +1,7 @@
+.content {
+    background: #fff;
+    height: 100vh;
+}
 
 // welcome
 .welcom-content {
@@ -26,14 +30,37 @@
 
 //reminders
 .reminders {
-    height: 100vh;
+    padding: 5% 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.reminders-content {
-    padding: 10% 10%;
-    width: 600px;
+
+.remindersText {
+    width: 374px;
 }
 
+.remindersText h2{
+    font-size: 24px;
+}
+.remindersText p {
+    font-size: 16px;
+    color: #A1A4B2;
+}
+
+.timePicker {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1% 0;
+}
+
+.daysList ul{
+    width: 374px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
