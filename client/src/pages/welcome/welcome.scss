@@ -1,5 +1,6 @@
 .content {
     background: #fff;
+    height: 100vh;
 }
 
 // welcome
@@ -29,12 +30,11 @@
 
 //reminders
 .reminders {
-    height: 100vh;
+    padding: 5% 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .remindersText {
@@ -55,4 +55,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 1% 0;
+}
+
+.daysList ul{
+    width: 374px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
 }

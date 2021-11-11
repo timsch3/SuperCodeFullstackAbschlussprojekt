@@ -53,7 +53,7 @@ const Login = (props) => {
                         <h2>What time would you<br />
                             like to meditate?</h2>
                         <p>Any time you can choose but We<br />
-                            recommend first thing in th morning.</p>
+                            recommend first thing in the morning.</p>
                     </div>
                     <div className="timePicker">
                         <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -69,9 +69,20 @@ const Login = (props) => {
                     </div>
                     <div className="remindersText">
                         <h2>Any time you can choose but We<br />
-                            recommend first thing in th morning.</h2>
+                            recommend first thing in the morning.</h2>
                         <p>Everyday is best, but we recommend<br />
                             picking at least five.</p>
+                    </div>
+                    <div className="daysList">
+                        <ul>
+                            <li><span>SU</span></li>
+                            <li><span>M</span></li>
+                            <li><span>T</span></li>
+                            <li><span>W</span></li>
+                            <li><span>TH</span></li>
+                            <li><span>F</span></li>
+                            <li><span>S</span></li>
+                        </ul>
                     </div>
                     <div className="but-but">
                         <Link to="/home">
