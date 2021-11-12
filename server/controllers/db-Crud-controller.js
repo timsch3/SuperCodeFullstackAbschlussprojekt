@@ -1,4 +1,4 @@
-const UserData = require('../models/test-model')
+const UserData = require('../models/user-model')
 
 createUserData = (req,res)=>{
     const body = req.body
