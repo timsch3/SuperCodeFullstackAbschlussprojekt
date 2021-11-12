@@ -4,7 +4,6 @@ import Nav from '../../components/nav/nav'
 import { Link } from 'react-router-dom';
 import Search from '../../components/search/search';
 import { useState, useEffect } from 'react'
-import ContentSection from '../../components/contentSection/contentSection';
 
 const Home = () => {
     const [data, setData] = useState(null)
@@ -47,8 +46,6 @@ const Home = () => {
                         </div>
                     </div>
                     <Search />
-                    <ContentSection title='Recommended yoga for you' contentData={data.yoga}></ContentSection>
-                    <ContentSection title='Recommended meditation for you' contentData={data.meditation} />
                 </main>
                 <Nav />
             </>
