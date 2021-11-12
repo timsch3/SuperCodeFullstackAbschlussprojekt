@@ -1,6 +1,4 @@
 #home-main {
-    top: 6vh;
-    position: relative;
     padding: 15px;
     h2 {
         font-size: 1.25rem;
@@ -8,7 +6,7 @@
     h3 {
         font-size: 1rem;
     }
-    p {
+    p, a {
         font-size: 0.75rem;
     }
     #we-hope {
@@ -24,12 +22,10 @@
     justify-content: space-between;
 }
 .home-lesson {
-    min-width: 38vw;
+    width: 100%;
     min-height: 25vh;
     border-radius: 10px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: center/cover no-repeat;
     padding: 0.75rem;
     display: grid;
     grid-template-rows: 0.6fr 0.75fr 0.75fr;
@@ -57,6 +53,7 @@
     }
 }
 .home-lessonL {
+    margin-right: 15px;
     h3, p {
         color: #FFECCC;
     }
