@@ -30,7 +30,7 @@ const updateUserData = (req,res)=>{
     const body = req.body
     if(!body){
         return res.status(400).json({
-            success = false, 
+            success : false, 
             error:'you must provide a body to update'
         })
     }
