@@ -14,31 +14,25 @@ const Yoga = () => {
                 <div className="category">
                     <ul>
                         <li>
-
-                            <Link to="/yoga"> <img className="nav__icon" src="/images/icons/nav/yoga.svg" alt=""></img>
+                            <Link to="/yoga"> <img className="nav__icon" src="/images/icons/list/all.svg" alt=""></img>
                                 <p> yoga</p></Link>
                         </li>
                         <li>
-
-                            <Link to="/yoga" > <img className="nav__icon" src="/images/icons/nav/meditate.svg" alt=""></img>
+                            <Link to="/yoga" > <img className="nav__icon" src="/images/icons/list/heart.svg" alt=""></img>
                                 <p>meditation</p></Link>
                         </li>
                         <li>
-
-                            <Link to="/yoga"> <img className="nav__icon" src="/images/icons/nav/home.svg" alt=""></img>
+                            <Link to="/yoga"> <img className="nav__icon" src="/images/icons/list/sad.svg" alt=""></img>
                                 <p>Home</p></Link>
                         </li>
                         <li>
-
-                            <Link to="/yoga">  <img className="nav__icon" src="/images/icons/nav/music.svg" alt=""></img>
+                            <Link to="/yoga">  <img className="nav__icon" src="/images/icons/list/sleep.svg" alt=""></img>
                                 <p>music</p></Link>
                         </li>
                         <li>
-
-                            <Link to="/yoga"><img className="nav__icon" src="/images/icons/nav/user.svg" alt=""></img>
+                            <Link to="/yoga"><img className="nav__icon" src="/images/icons/list/kid.svg" alt=""></img>
                                 <p>user</p></Link>
                         </li>
-
                     </ul>
                 </div>
             </div>
