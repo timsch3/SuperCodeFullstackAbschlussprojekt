@@ -61,7 +61,13 @@ passport.use(new GoogleStrategy({
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
   function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ googleId: profile.id, userName: profile.id }, function (err, user) {
+    User.findOrCreate({ 
+        googleId: profile.id,
+        userName: profile.name.givenName,
+        name:profile.name.familyName,
+        photo:profile.photos.value
+
+        }, function (err, user) {
       return cb(err, user);
     });
   }
@@ -86,7 +92,7 @@ app.get("/auth/google/callback",
      "http://localhost:8000"
     }),
     function(req,res){
-        res.redirect("http://localhost:8000");
+        res.redirect("http://localhost:8000/welcome");
     }
 )
 

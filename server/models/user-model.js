@@ -8,12 +8,17 @@ const UserData = new Schema(
         userId:{
             type:String,
         },
+        photo:{
+            type:String,
+
+        },
         userName:{
             type:String,
             required:true
         },
         name:{
             type:String,
+            required:true
         },
         googleId:{
             type:String,
