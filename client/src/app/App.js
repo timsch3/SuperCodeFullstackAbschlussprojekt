@@ -29,7 +29,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/yoga" element={<Yoga />} />
         <Route path="/yoga-details" element={<YogaDetail />} />
-        <Route path="/meditate-details" element={<Meditate />} />
+        <Route path="/meditate" element={<Meditate />} />
         <Route path="/meditate-details" element={<MediDetail />} />
         <Route path="/music" element={<Music />} />
         <Route path="/user" element={<User />} />
