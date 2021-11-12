@@ -50,11 +50,13 @@ const Home = () => {
                         <h2>Recommended yoga for you</h2>
                         <div id={'home-recommended-yoga-cards'}>
                             {data.yoga.map((elt) => {
-                                <div className={'home-recommended-yoga-card'}>
-                                    <img src={elt.track.album.images[0].url} alt={elt.track.name} />
-                                    <h3>{elt.track.name}</h3>
-                                    <p>{(elt.track.duration_ms * 0.000016666666666667).toFixed(0)} MIN</p>
-                                </div>
+                                return (
+                                    <div className={'home-recommended-yoga-card'}>
+                                        <img src={elt.track.album.images[0].url} alt={elt.track.name} />
+                                        <h3>{elt.track.name}</h3>
+                                        <p>{(elt.track.duration_ms * 0.000016666666666667).toFixed(0)} MIN</p>
+                                    </div>
+                                )
                             })
                             }
                         </div>

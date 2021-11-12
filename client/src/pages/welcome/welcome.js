@@ -36,8 +36,10 @@ const Login = (props) => {
                         welcome<br />
                         to Silent Moon
                     </h2>
-                    <div className="but-but">
-                        <Button onClick={toggle} name={'GET STARTED'} />
+                    <div className="but-wel ">
+                        <div className="but-but">
+                            <Button onClick={toggle} name={'GET STARTED'} />
+                        </div>
                     </div>
                 </div>
             </>
@@ -86,14 +88,16 @@ const Login = (props) => {
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div className="but-but">
-                    <Link to="/home">
-                        <Button name={'SAVE'} />
-                    </Link>
-                    <Link to="/home">
-                        <Button buttonStyle={{ background: 'none', color: '#E28F83' }} name={'NO THANKS'} />
-                    </Link>
+                    <div className="but-rem">
+                        <div className="but-but">
+                            <Link to="/home">
+                                <Button name={'SAVE'} />
+                            </Link>
+                            <Link to="/home">
+                                <Button buttonStyle={{ background: 'none', color: '#E28F83' }} name={'NO THANKS'} />
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </>
         )
