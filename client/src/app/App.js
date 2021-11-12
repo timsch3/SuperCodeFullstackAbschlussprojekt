@@ -1,4 +1,5 @@
 import '../style/style.scss'
+import Login from '../pages/login/login'
 import Welcome from '../pages/welcome/welcome'
 import Home from '../pages/home/home'
 import Yoga from '../pages/yoga/yoga'
@@ -25,7 +26,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Welcome loginData={loginData} />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/welcome" element={<Welcome loginData={loginData} />} />
         <Route path="/home" element={<Home />} />
         <Route path="/yoga" element={<Yoga />} />
         <Route path="/yoga-details" element={<YogaDetail />} />
