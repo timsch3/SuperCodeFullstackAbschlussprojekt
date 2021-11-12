@@ -1,0 +1,16 @@
+#content-container {
+    h2 {
+        padding-bottom: 20px;
+    }
+    img {
+        max-width: 35vw;
+    }
+    padding-bottom: 40px;
+}
+#content-cards-container {
+    display: flex;
+    overflow-x: scroll;
+}
+.content-card {
+    padding-right: 20px;
+}
