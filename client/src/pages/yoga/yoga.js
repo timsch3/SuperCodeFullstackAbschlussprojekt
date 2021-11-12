@@ -2,6 +2,7 @@ import './yoga.scss'
 import Titel from '../../components/titel/titel'
 
 import { Link } from 'react-router-dom'
+import Nav from '../../components/nav/nav'
 
 const Yoga = () => {
     return (
@@ -41,6 +42,7 @@ const Yoga = () => {
                     </ul>
                 </div>
             </div>
+            <Nav />
         </>
     );
 }
