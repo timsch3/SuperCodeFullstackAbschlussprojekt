@@ -1,4 +1,4 @@
-import './yoga.scss'
+import './yogaMedi.scss'
 
 import { useState, useEffect } from 'react'
 
@@ -9,41 +9,32 @@ import Nav from '../../components/nav/nav'
 
 import ContentSearch from '../../components/contentSearch/contentSearch'
 
-const Yoga = () => {
+const Yoga = (props) => {
 
-    const [data, setData] = useState([])
-    const [newData, setNewData] = useState([])
-    const [searchData, setSearchData] = useState('')
-    const [isReadySearch, setIsReadySearch] = useState(false)
-    const [isReady, setIsReady] = useState(false)
+    const { titel, description, data, isReady } = props;
 
-    useEffect(() => {
-        fetch('http://localhost:3000/home')
-            .then(res => res.json())
-            .then(response => {
-                setData(response.yoga)
-                setIsReady(true)
-            })
-    }, []);
+    const [newData, setNewData] = useState([]);
+    const [searchData, setSearchData] = useState('');
+    const [isReadySearch, setIsReadySearch] = useState(false);
 
     const getSearchData = (e) => {
         setSearchData(e)
     }
 
-    useEffect(() => {
-        setIsReadySearch(true)
-        const results = data.filter(elt =>
-            elt.track.name.toLowerCase().includes(searchData)
-        );
-        setNewData(results)
-    }, [searchData])
+    // useEffect(() => {
+    //     setIsReadySearch(true)
+    //     const results = data.filter(elt =>
+    //         elt.track.name.toLowerCase().includes(searchData)
+    //     );
+    //     setNewData(results)
+    // }, [searchData])
 
     return (
         <>
             <Titel />
             <main className="content-yom">
-                <h1>Yoga</h1>
-                <p>Find your inner zen from annywhere.</p>
+                <h1>{titel}</h1>
+                <p>{description}</p>
                 <div className="cat-yom">
                     <Category />
                 </div>
