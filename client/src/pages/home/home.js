@@ -17,6 +17,7 @@ const Home = () => {
                 setIsReady(true)
             })
     }, [])
+
     if (isReady) {
         return (
             <>

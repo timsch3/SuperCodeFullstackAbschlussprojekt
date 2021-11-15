@@ -1,0 +1,37 @@
+.cat-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        text-align: center;
+        color: #A1A4B2;
+        img {
+            padding: 15px;
+        }
+        p {
+            margin: 5px 0 0 0;
+        }
+    } 
+}
+
+.cat-icon{
+    height: 30px;
+    width: 30px;
+    display: block;
+    padding: 5px;
+    border-radius: 20px; 
+    border: 1px solid white;
+    background: #A1A4B2;
+    size: 12px;
+    &:hover {
+        background:#8E9775;
+    }
+}
+
+.cat-icon:hover + p { 
+  color: #8E9775;
+}
