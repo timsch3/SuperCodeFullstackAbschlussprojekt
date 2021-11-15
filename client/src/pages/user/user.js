@@ -4,25 +4,30 @@ import Nav from '../../components/nav/nav'
 import { Link } from 'react-router-dom';
 import Search from '../../components/search/search';
 import { useState, useEffect } from 'react'
+import api from '../../api/index'
 
 const Home = () => {
     const [data, setData] = useState(null)
     const [isReady, setIsReady] = useState()
     useEffect(() => {
-        fetch('http://localhost:3000/api/user') // fetch when backend google auth is ready
-            .then(res => res.json())
-            .then(response => {
-                setData(response)
-                setIsReady(true)
-            })
+        const fetchProducts = async () => {
+            const data = await api.getAllData()
+            setData(data.data.data[0])
+            setIsReady(true)
+        }
+        fetchProducts()
     }, [])
     if (isReady) {
+        console.log(data)
+        let userImagePath = '/images/user.svg' // dummy user photo or from google account data
+        if (data.userImage != null) userImagePath = data.userImage
         return (
             <>
                 <Titel />
                 <main id={'user-main'}>
                     <div id={'user-profile'}>
-                        [user image and name]
+                        <img src={userImagePath} alt={data.userName} />
+                        <h2>{data.userName}</h2>
                     </div>
                     <Search />
                     <div id={'user-favs-yoga'}>
