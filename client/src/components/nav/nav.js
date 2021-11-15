@@ -19,7 +19,7 @@ const Nav = () => {
                     </li>
                     <li>
 
-                        <Link to="/meditation" > <img className="nav__icon" src="/images/icons/nav/meditate.svg" alt=""></img>
+                        <Link to="/meditate" > <img className="nav__icon" src="/images/icons/nav/meditate.svg" alt=""></img>
                             <p>meditation</p></Link>
                     </li>
                     <li>
