@@ -1,54 +1,53 @@
-import './yogaMedi.scss'
+import './yogaMedi.scss';
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
-import Titel from '../../components/titel/titel'
-import Category from '../../components/category/Category'
-import Search from '../../components/search/search'
-import Nav from '../../components/nav/nav'
+import Titel from '../../components/titel/titel';
+import Category from '../../components/category/Category';
+import Search from '../../components/search/search';
+import Nav from '../../components/nav/nav';
 
-import ContentSearch from '../../components/contentSearch/contentSearch'
+import ContentSearch from '../../components/contentSearch/contentSearch';
 
 const YogaMedi = (props) => {
 
     const { serverAPI, titel, description } = props;
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
     const [searchedData, setSearchedData] = useState([]);
     const [searchValue, setSearchValue] = useState('');
-    const [isReady, setIsReady] = useState(false)
+    const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
         if (titel === 'Yoga') {
             fetch(serverAPI)
                 .then(res => res.json())
                 .then(response => {
-                    setData(response.yoga)
-                    setIsReady(true)
-                    console.log(response)
+                    setData(response.yoga);
+                    setIsReady(true);
                 })
-            setSearchValue('')
+            setSearchValue('');
         } else {
             fetch(serverAPI)
                 .then(res => res.json())
                 .then(response => {
-                    setData(response.meditation)
-                    setIsReady(true)
+                    setData(response.meditation);
+                    setIsReady(true);
                 })
-            setSearchValue('')
+            setSearchValue('');
         }
     }, [titel]);
 
     const getSearchValue = (e) => {
-        setSearchValue(e)
+        setSearchValue(e);
     }
 
     useEffect(() => {
         const results = data.filter(elt =>
             elt.track.name.toLowerCase().includes(searchValue)
         );
-        setSearchedData(results)
-    }, [searchValue])
+        setSearchedData(results);
+    }, [searchValue]);
 
     //category
     const getAllCat = () => {
@@ -56,25 +55,25 @@ const YogaMedi = (props) => {
     }
 
     const getFavoritesCat = () => {
-        console.log('Favorites')
+        console.log('Favorites');
     }
 
     const getSadCat = () => {
-        console.log('Sad')
+        console.log('Sad');
     }
 
     const getSleepCat = () => {
         fetch(serverAPI)
             .then(res => res.json())
             .then(response => {
-                setData(response.sleep)
-                setIsReady(true)
-            })
-        setSearchValue('')
+                setData(response.sleep);
+                setIsReady(true);
+            });
+        setSearchValue('');
     }
 
     const getKidsCat = () => {
-        console.log('Kids')
+        console.log('Kids');
     }
 
     return (

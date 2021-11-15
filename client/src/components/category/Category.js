@@ -1,6 +1,4 @@
-import './category.scss'
-
-import { Link } from 'react-router-dom';
+import './category.scss';
 
 const Category = (props) => {
 

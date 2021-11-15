@@ -4,12 +4,12 @@ import { useState } from 'react';
 const Search = (props) => {
     const [searchValue, setSearchValue] = useState('');
 
-    const { getSearchValue } = props
+    const { getSearchValue } = props;
 
     const handleSearch = (e) => {
-        const value = e.target.value
-        setSearchValue(value)
-        getSearchValue(value)
+        const value = e.target.value;
+        setSearchValue(value);
+        getSearchValue(value);
     }
 
     return (<div id={'search'}>

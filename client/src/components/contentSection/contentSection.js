@@ -1,9 +1,10 @@
-import './contentSection.scss'
+import './contentSection.scss';
 
 const ContentSection = (props) => {
+    const { title } = props;
     return (
         <div id={'content-container'}>
-            <h2>{props.title}</h2>
+            <h2>{title}</h2>
             <div id={'content-cards-container'}>
                 {props.contentData.map((elt, key) => {
                     return (

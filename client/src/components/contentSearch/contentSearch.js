@@ -1,8 +1,8 @@
-import './contentSearch.scss'
+import './contentSearch.scss';
 
 const ContentSearch = (props) => {
 
-    const { data } = props
+    const { data } = props;
 
     return (
         <div className="content-search">
