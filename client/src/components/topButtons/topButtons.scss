@@ -1,0 +1,41 @@
+#topButtonsContainer {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100vw - 30px);
+    position: fixed;
+    inset: 0;
+    padding: 15px;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        img {
+            width: 33%;
+            height: 33%;
+        }
+    }
+}
+
+#topButtonsLeft {
+    display: flex;
+    justify-content: flex-start;
+    a {
+        background-color: #FAF2DA;
+    }
+
+}
+
+#topButtonsRight {
+    display: flex;
+    justify-content: flex-end;
+    a {
+        background-color: #E28F83;
+        opacity: 0.5;
+    }
+    a:first-of-type {
+        margin-right: 10px;
+    }
+}

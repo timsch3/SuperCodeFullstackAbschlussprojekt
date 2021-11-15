@@ -1,5 +1,6 @@
 import './details.scss'
 import Nav from '../../components/nav/nav'
+import TopButtons from '../../components/topButtons/topButtons'
 import { Link } from 'react-router-dom'
 
 let meditate = {
@@ -14,8 +15,9 @@ let meditate = {
 const MediDetail = () => {
     return (
         <div>
+            <TopButtons />
             <section style={meditate}>
-                <div className="icon__flex">
+                {/* <div className="icon__flex">
                     <div className="yogaDetail__icon">
                         <Link to="/user" > <img src="/images/icons/arrow-back.svg" alt=""></img></Link>
                     </div>
@@ -23,7 +25,7 @@ const MediDetail = () => {
                         <Link to="/user"> <img src="/images/icons/list/heart.svg" alt=""></img></Link>
                         <Link to="/user"> <img src="/images/icons/download.svg" alt=""></img> </Link>
                     </div>
-                </div>
+                </div> */}
             </section>
 
             <section className="yogaDetail__main">
