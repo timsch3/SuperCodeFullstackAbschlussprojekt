@@ -10,7 +10,7 @@ const Home = () => {
     const [data, setData] = useState(null)
     const [isReady, setIsReady] = useState(false)
     useEffect(() => {
-        fetch('http://localhost:3000/home')
+        fetch('http://localhost:3000/')
             .then(res => res.json())
             .then(response => {
                 setData(response)
@@ -33,7 +33,7 @@ const Home = () => {
                             </div>
                             <div className="home-lesson-bottom">
                                 <span>3-10 MIN</span>
-                                <Link to='/'>START</Link>
+                                <Link to='/yoga-details'>START</Link>
                             </div>
                         </div>
                         <div className={'home-lesson home-lessonR'} style={{ backgroundImage: `url(/images/home/meditation.png)` }}>
@@ -43,7 +43,7 @@ const Home = () => {
                             </div>
                             <div className="home-lesson-bottom">
                                 <span>3-10 MIN</span>
-                                <Link to='/'>START</Link>
+                                <Link to='/meditate-details'>START</Link>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ const Home = () => {
                             </div>
                             <div className="home-lesson-bottom">
                                 <span>3-10 MIN</span>
-                                <Link to='/'>START</Link>
+                                <Link to='/yoga-details'>START</Link>
                             </div>
                         </div>
                         <div className={'home-lesson home-lessonR'} style={{ backgroundImage: `url(/images/home/meditation.png)` }}>
@@ -81,7 +81,7 @@ const Home = () => {
                             </div>
                             <div className="home-lesson-bottom">
                                 <span>3-10 MIN</span>
-                                <Link to='/'>START</Link>
+                                <Link to='/meditate-details'>START</Link>
                             </div>
                         </div>
                     </div>
