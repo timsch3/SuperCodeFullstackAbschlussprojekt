@@ -11,43 +11,71 @@ import ContentSearch from '../../components/contentSearch/contentSearch'
 
 const YogaMedi = (props) => {
 
-    const { titel, description } = props;
+    const { serverAPI, titel, description } = props;
 
     const [data, setData] = useState([])
-    const [newData, setNewData] = useState([]);
-    const [searchData, setSearchData] = useState('');
+    const [searchedData, setSearchedData] = useState([]);
+    const [searchValue, setSearchValue] = useState('');
     const [isReady, setIsReady] = useState(false)
 
     useEffect(() => {
-        if (titel == 'Yoga') {
-            fetch('http://localhost:3000/')
+        if (titel === 'Yoga') {
+            fetch(serverAPI)
                 .then(res => res.json())
                 .then(response => {
                     setData(response.yoga)
                     setIsReady(true)
+                    console.log(response)
                 })
-            setSearchData('')
+            setSearchValue('')
         } else {
-            fetch('http://localhost:3000/')
+            fetch(serverAPI)
                 .then(res => res.json())
                 .then(response => {
                     setData(response.meditation)
                     setIsReady(true)
                 })
-            setSearchData('')
+            setSearchValue('')
         }
     }, [titel]);
 
-    const getSearchData = (e) => {
-        setSearchData(e)
+    const getSearchValue = (e) => {
+        setSearchValue(e)
     }
 
     useEffect(() => {
         const results = data.filter(elt =>
-            elt.track.name.toLowerCase().includes(searchData)
+            elt.track.name.toLowerCase().includes(searchValue)
         );
-        setNewData(results)
-    }, [searchData])
+        setSearchedData(results)
+    }, [searchValue])
+
+    //category
+    const getAllCat = () => {
+        window.location.reload();
+    }
+
+    const getFavoritesCat = () => {
+        console.log('Favorites')
+    }
+
+    const getSadCat = () => {
+        console.log('Sad')
+    }
+
+    const getSleepCat = () => {
+        fetch(serverAPI)
+            .then(res => res.json())
+            .then(response => {
+                setData(response.sleep)
+                setIsReady(true)
+            })
+        setSearchValue('')
+    }
+
+    const getKidsCat = () => {
+        console.log('Kids')
+    }
 
     return (
         <>
@@ -56,10 +84,16 @@ const YogaMedi = (props) => {
                 <h1>{titel}</h1>
                 <p>{description}</p>
                 <div className="cat-yom">
-                    <Category />
+                    <Category
+                        getAllCat={getAllCat}
+                        getFavoritesCat={getFavoritesCat}
+                        getSadCat={getSadCat}
+                        getSleepCat={getSleepCat}
+                        getKidsCat={getKidsCat}
+                    />
                 </div>
                 <div className="search-yom">
-                    <Search getSearchData={getSearchData} />
+                    <Search getSearchValue={getSearchValue} />
                 </div>
                 <div className="track-yom-background">
                     <div className="track-yom">
@@ -79,7 +113,7 @@ const YogaMedi = (props) => {
                 {isReady
                     ?
                     <div className="search-content">
-                        <ContentSearch data={searchData != 0 ? newData : data} />
+                        <ContentSearch data={searchValue != 0 ? searchedData : data} />
                     </div>
                     :
                     <div>Loading...</div>

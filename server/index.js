@@ -55,19 +55,20 @@ passport.deserializeUser(function (id, done) {
   });
 });
 passport.use(new GoogleStrategy({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/callback",
-  userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
-},
-  function (accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({
-      googleId: profile.id,
-      userName: profile.name.givenName,
-      name: profile.name.familyName,
-      photo: profile.photos.value
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/callback",
+    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({ 
+        _id:profile.id,
+        googleid: profile.id,
+        username: profile.name.givenName,
+        name:profile.name.familyName,
+        photo:profile.photos.value
 
-    }, function (err, user) {
+        }, function (err, user) {
       return cb(err, user);
     });
   }
@@ -102,12 +103,10 @@ app.get("/logout", function (req, res) {
   res.redirect("http://localhost:8000/")
 })
 
-app.get('/', (req, res) => {
-  res.send('hello world')
-})
+
 //db Crud routing
 app.use('/api', dbRouter)
 //API
-app.use('/home', homeRouter)
+app.use('/', homeRouter)
 
 app.listen(process.env.PORT, () => console.log('i am Listening at', process.env.PORT))
