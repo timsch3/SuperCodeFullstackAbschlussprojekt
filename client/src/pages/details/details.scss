@@ -1,9 +1,41 @@
 .icon__flex{
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 
+.yogaDetail__icon{
+    margin-left: 5%;
+        a{
+        border-radius: 50%;
+        border:1px solid white 0.6;
+        padding: 10px;
+        background: whitesmoke;
+        opacity: .6;
+        }
 
+    img{
+        height: 15px;
+        width: 15px;
+    }      
+}
+
+.yogaDetail__icon2{
+    
+    margin-left: 55%;
+    a{
+    border-radius: 50%;
+    border: 1px solid #E28F83 0.6;
+    padding: 10px;
+    background: #E28F83;
+    opacity: .6;
+    margin-right: 15px;
+
+    }
+    img{
+        height: 15px;
+        width: 15px;
+    }
+}
 
 
 .yogaDetail__main {
@@ -30,4 +62,14 @@
 .yogaDetail__flex_space{
     display: flex;
    padding-left: 20px;
+}
+
+.play__icon{
+    margin: 6% 5%;
+    border-radius: 50%;
+    border:1px solid grey 0.6;
+    padding: 10px;
+    background: lightgrey;
+    opacity: .6;
+
 }
