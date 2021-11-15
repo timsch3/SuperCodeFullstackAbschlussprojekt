@@ -9,14 +9,30 @@ import ContentSection from '../../components/contentSection/contentSection'
 const Home = () => {
     const [data, setData] = useState(null)
     const [isReady, setIsReady] = useState(false)
+    const [newData, setNewData] = useState([])
+    const [searchData, setSearchData] = useState('')
+
     useEffect(() => {
-        fetch('http://localhost:3000/home')
+        fetch('http://localhost:3000/')
             .then(res => res.json())
             .then(response => {
                 setData(response)
                 setIsReady(true)
+                console.log(data)
             })
+        setSearchData('')
     }, [])
+
+    const getSearchData = (e) => {
+        setSearchData(e)
+    }
+
+    useEffect(() => {
+        const results = data.yoga.filter(elt =>
+            elt.track.name.toLowerCase().includes(searchData)
+        );
+        setNewData(results)
+    }, [searchData])
 
     if (isReady) {
         return (
@@ -47,8 +63,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <Search />
-                    <div id="spacer" />
+                    <Search data={searchData !== 0 ? newData : data} />
+                    <div className="spacer" />
                     <ContentSection title='Recommended yoga for you' contentData={data.yoga}></ContentSection>
                     <ContentSection title='Recommended meditation for you' contentData={data.meditation} />
                 </main>
@@ -85,8 +101,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <br />
-                    <p>Loading data...</p>
+                    <div className="spacer"></div>
+                    <p>Loading...</p>
                 </main>
                 <Nav />
             </>
