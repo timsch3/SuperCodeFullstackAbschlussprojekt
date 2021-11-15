@@ -9,7 +9,7 @@ import Music from '../pages/music/music'
 import User from '../pages/user/user'
 
 import dataLogin from '../data/data'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import {
   BrowserRouter,
@@ -21,18 +21,6 @@ function App() {
 
   const [loginData, setLoginData] = useState(dataLogin)
 
-  const [data, setData] = useState([])
-  const [isReady, setIsReady] = useState(false)
-
-  useEffect(() => {
-    fetch('http://localhost:3000/home')
-      .then(res => res.json())
-      .then(response => {
-        setData(response)
-        setIsReady(true)
-      })
-  }, []);
-
   return (
     <BrowserRouter>
       <Routes>
@@ -41,16 +29,12 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/yoga"
           element={<YogaMedi
-            data={data.yoga}
-            isReady={isReady}
             titel={'Yoga'}
             description={'Find your inner zen from annywhere.'}
           />} />
         <Route path="/yoga-details" element={<YogaDetail />} />
         <Route path="/meditate"
           element={<YogaMedi
-            data={data.meditation}
-            isReady={isReady}
             titel={'Meditate'}
             description={'Audio-only meditation techniques to help you minimize your screen time and practice on the go.'}
           />} />

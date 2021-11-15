@@ -9,25 +9,46 @@ import Nav from '../../components/nav/nav'
 
 import ContentSearch from '../../components/contentSearch/contentSearch'
 
-const Yoga = (props) => {
+const YogaMedi = (props) => {
 
-    const { titel, description, data, isReady } = props;
+    const { titel, description } = props;
 
+    const [data, setData] = useState([])
     const [newData, setNewData] = useState([]);
     const [searchData, setSearchData] = useState('');
-    const [isReadySearch, setIsReadySearch] = useState(false);
+    const [isReady, setIsReady] = useState(false)
+
+    useEffect(() => {
+        if (titel == 'Yoga') {
+            fetch('http://localhost:3000/home')
+                .then(res => res.json())
+                .then(response => {
+                    setData(response.yoga)
+                    setIsReady(true)
+                })
+            setSearchData('')
+        } else {
+            fetch('http://localhost:3000/home')
+                .then(res => res.json())
+                .then(response => {
+                    setData(response.meditation)
+                    setIsReady(true)
+                })
+            setSearchData('')
+        }
+    }, [titel]);
 
     const getSearchData = (e) => {
         setSearchData(e)
     }
 
-    // useEffect(() => {
-    //     setIsReadySearch(true)
-    //     const results = data.filter(elt =>
-    //         elt.track.name.toLowerCase().includes(searchData)
-    //     );
-    //     setNewData(results)
-    // }, [searchData])
+    useEffect(() => {
+        const results = data.filter(elt =>
+            elt.track.name.toLowerCase().includes(searchData)
+        );
+        setNewData(results)
+    }, [searchData])
+
 
     return (
         <>
@@ -59,7 +80,7 @@ const Yoga = (props) => {
                 {isReady
                     ?
                     <div className="search-content">
-                        <ContentSearch data={isReadySearch && searchData != 0 ? newData : data} />
+                        <ContentSearch data={searchData != 0 ? newData : data} />
                     </div>
                     :
                     <div>Loading...</div>
@@ -70,4 +91,4 @@ const Yoga = (props) => {
     );
 }
 
-export default Yoga;
+export default YogaMedi;
