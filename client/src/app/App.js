@@ -17,6 +17,8 @@ import {
   Route
 } from "react-router-dom";
 
+const serverAPI = 'http://localhost:3000/'
+
 function App() {
 
   const [loginData, setLoginData] = useState(dataLogin)
@@ -26,15 +28,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/welcome" element={<Welcome loginData={loginData} />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/home"
+          element={<Home
+            serverAPI={serverAPI}
+          />} />
         <Route path="/yoga"
           element={<YogaMedi
+            serverAPI={serverAPI}
             titel={'Yoga'}
             description={'Find your inner zen from annywhere.'}
           />} />
         <Route path="/yoga-details" element={<YogaDetail />} />
         <Route path="/meditate"
           element={<YogaMedi
+            serverAPI={serverAPI}
             titel={'Meditate'}
             description={'Audio-only meditation techniques to help you minimize your screen time and practice on the go.'}
           />} />

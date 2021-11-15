@@ -1,4 +1,4 @@
-import './welcome.scss'
+import './welcome.scss';
 
 import { useState } from 'react';
 
@@ -11,8 +11,8 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import StaticTimePicker from '@mui/lab/StaticTimePicker';
 import './GlobalCssClock.css';
 
-import Titel from '../../components/titel/titel'
-import Button from '../../components/button/button'
+import Titel from '../../components/titel/titel';
+import Button from '../../components/button/button';
 
 
 const Login = (props) => {
@@ -22,9 +22,7 @@ const Login = (props) => {
 
     const [value, setValue] = useState(new Date());
 
-    const { loginData } = props
-    const photo = loginData.photos[0].value
-    console.log(photo)
+    const { loginData } = props;
 
     const getWelcome = () => {
 

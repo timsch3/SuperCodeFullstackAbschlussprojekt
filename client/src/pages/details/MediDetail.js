@@ -47,21 +47,21 @@ const MediDetail = () => {
 
             <h2 className="yogaDetail__main">Playlist</h2>
             <section className="icon__flex">
-                <img className="yogaDetail__icon" src="/images/icons/play.png" alt=""></img>
+                <img className="play__icon" src="/images/icons/play.png" alt=""></img>
                 <div>
                     <p>Focus Attention</p>
                     <p>10min</p>
                 </div>
             </section>
             <section className="icon__flex">
-                <img className="yogaDetail__icon" src="/images/icons/play.png" alt=""></img>
+                <img className="play__icon" src="/images/icons/play.png" alt=""></img>
                 <div>
                     <p>Focus Attention</p>
                     <p>10min</p>
                 </div>
             </section>
             <section className="icon__flex">
-                <img className="yogaDetail__icon" src="/images/icons/play.png" alt=""></img>
+                <img className="play__icon" src="/images/icons/play.png" alt=""></img>
                 <div>
                     <p>Focus Attention</p>
                     <p>10min</p>

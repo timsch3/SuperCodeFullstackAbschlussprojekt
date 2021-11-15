@@ -1,7 +1,8 @@
 import './topButtons.scss'
 import { Link } from 'react-router-dom'
 
-const TopButtons = () => {
+const TopButtons = (props) => {
+
     return (<div id='topButtonsContainer'>
         <div id="topButtonsLeft">
             <Link to="/home" >
