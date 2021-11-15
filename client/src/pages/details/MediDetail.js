@@ -1,20 +1,19 @@
 import './details.scss'
-import Titel from '../../components/titel/titel'
+import Nav from '../../components/nav/nav'
 
 const MediDetail = () => {
     return (
         <div>
-            <Titel />
-            <section>
-                <img className="yogaDetail__icon" src="/images/yoga.png" alt=""></img>
+
+            <section style={{ backgroundImage: `url(/images/home/healthy-back.png)` }}>
                 <img className="yogaDetail__icon" src="/images/icons/arrow-back.svg" alt=""></img>
-                <img className="yogaDetail__icon" src="/images/icons/favorites.svg" alt=""></img>
+                <img className="yogaDetail__icon" src="/images/icons/heart.svg" alt=""></img>
                 <img className="yogaDetail__icon" src="/images/icons/download.svg" alt=""></img>
             </section>
             <h1>Happy Morning</h1>
             <p>COURSE</p>
             <p> Ease the mind into a restful night’s sleep  with
-                these deep, amblent tones.</p>
+                these deep, ambient tones.</p>
             <img className="yogaDetail__icon" src="/images/icons/favorites.svg" alt=""></img>
             <p>[XXX]Favorits</p>
             <img className="yogaDetail__icon" src="/images/icons/listening.svg" alt=""></img>
@@ -42,6 +41,7 @@ const MediDetail = () => {
                     <p>10min</p>
                 </div>
             </section>
+            <Nav />
 
 
 

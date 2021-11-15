@@ -9,25 +9,26 @@ const Home = () => {
     const [data, setData] = useState(null)
     const [isReady, setIsReady] = useState()
     useEffect(() => {
-        fetch('http://localhost:3000/user')
+        fetch('http://localhost:3000/api/user') // fetch when backend google auth is ready
             .then(res => res.json())
             .then(response => {
                 setData(response)
+                setIsReady(true)
             })
     }, [])
-
-    return (
-        <>
-            <Titel />
-            <main id={'user-main'}>
-                <div id={'user-profile'}>
-                    [user image and name]
-                </div>
-                <Search />
-                <div id={'user-favs-yoga'}>
-                    <h2>Recommended yoga for you</h2>
-                    <div id={'user-favs-yoga-cards'}>
-                        {/* {data.yoga.map((elt) => {
+    if (isReady) {
+        return (
+            <>
+                <Titel />
+                <main id={'user-main'}>
+                    <div id={'user-profile'}>
+                        [user image and name]
+                    </div>
+                    <Search />
+                    <div id={'user-favs-yoga'}>
+                        <h2>Your yoga favorites</h2>
+                        <div id={'user-favs-yoga-cards'}>
+                            {/* {data.yoga.map((elt) => {
                             return (
                                 <div className={'user-favs-yoga-card'}>
                                     <img src={elt.track.album.images[0].url} alt={elt.track.name} />
@@ -36,12 +37,12 @@ const Home = () => {
                                 </div>
                             )
                         })} */}
+                        </div>
                     </div>
-                </div>
-                <div id={'user-favs-meditation'}>
-                    <h2>Recommended meditation for you</h2>
-                    <div id={'user-favs-meditation-cards'}>
-                        {/* {data.meditation.map((elt) => {
+                    <div id={'user-favs-meditation'}>
+                        <h2>Your meditation favorites</h2>
+                        <div id={'user-favs-meditation-cards'}>
+                            {/* {data.meditation.map((elt) => {
                             return (
                                 <div className={'user-favs-yoga-card'}>
                                     <img src={elt.track.album.images[0].url} alt={elt.track.name} />
@@ -50,12 +51,28 @@ const Home = () => {
                                 </div>
                             )
                         })} */}
+                        </div>
                     </div>
-                </div>
-            </main>
-            <Nav />
-        </>
-    );
+                </main>
+                <Nav />
+            </>
+        )
+    }
+    else {
+        return (
+            <>
+                <Titel />
+                <main id={'user-main'}>
+                    <div id={'user-profile'}>
+                        [user image and name]
+                    </div>
+                    <br />
+                    <p>Loading data...</p>
+                </main>
+                <Nav />
+            </>
+        )
+    }
 }
 
 export default Home;

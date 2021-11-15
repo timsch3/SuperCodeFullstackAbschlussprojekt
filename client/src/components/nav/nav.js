@@ -24,7 +24,7 @@ const Nav = () => {
                     </li>
                     <li>
 
-                        <Link to="/"> <img className="nav__icon" src="/images/icons/nav/home.svg" alt=""></img>
+                        <Link to="/home"> <img className="nav__icon" src="/images/icons/nav/home.svg" alt=""></img>
                             <p>Home</p></Link>
                     </li>
                     <li>
