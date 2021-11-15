@@ -2,42 +2,43 @@ import './category.scss'
 
 import { Link } from 'react-router-dom';
 
+const Category = (props) => {
 
+    const { getAllCat, getFavoritesCat, getSadCat, getSleepCat, getKidsCat } = props;
 
-const Category = () => {
     return (
         <ul className="cat-list">
             <li>
-                <Link to="/yoga">
+                <div onClick={() => getAllCat()}>
                     <img className="cat-icon" src="/images/icons/list/all.svg" alt=""></img>
                     <p>All</p>
-                </Link>
+                </div>
             </li>
             <li>
-                <Link to="/yoga" >
+                <div onClick={() => getFavoritesCat()}>
                     <img className="cat-icon" src="/images/icons/list/heart.svg" alt=""></img>
                     <p>Favorites</p>
-                </Link>
+                </div>
             </li>
             <li>
-                <Link to="/yoga">
+                <div onClick={() => getSadCat()}>
                     <img className="cat-icon" src="/images/icons/list/sad.svg" alt=""></img>
                     <p>Anxious</p>
-                </Link>
+                </div>
             </li>
             <li>
-                <Link to="/yoga">
+                <div onClick={() => getSleepCat()}>
                     <img className="cat-icon" src="/images/icons/list/sleep.svg" alt=""></img>
                     <p>Sleep</p>
-                </Link>
+                </div>
             </li>
             <li>
-                <Link to="/yoga">
+                <div onClick={() => getKidsCat()}>
                     <img className="cat-icon" src="/images/icons/list/kid.svg" alt=""></img>
                     <p>Kids</p>
-                </Link>
+                </div>
             </li>
-        </ul>
+        </ul >
     )
 }
 export default Category;
