@@ -1,22 +1,50 @@
-import './home.scss'
-import Titel from '../../components/titel/titel'
-import Nav from '../../components/nav/nav'
+import './home.scss';
+import Titel from '../../components/titel/titel';
+import Nav from '../../components/nav/nav';
 import { Link } from 'react-router-dom';
 import Search from '../../components/search/search';
-import { useState, useEffect } from 'react'
-import ContentSection from '../../components/contentSection/contentSection'
+import { useState, useEffect } from 'react';
+import ContentSection from '../../components/contentSection/contentSection';
 
-const Home = () => {
-    const [data, setData] = useState(null)
-    const [isReady, setIsReady] = useState(false)
+const Home = (props) => {
+
+    const { serverAPI } = props;
+
+    const [dataY, setDataY] = useState([]);
+    const [dataM, setDataM] = useState([]);
+    const [searchedDataY, setSearchedDataY] = useState([]);
+    const [searchedDataM, setSearchedDataM] = useState([]);
+    const [isReady, setIsReady] = useState(false);
+    const [searchValue, setSearchValue] = useState(null);
+
     useEffect(() => {
-        fetch('http://localhost:3000/')
+        fetch(serverAPI)
             .then(res => res.json())
             .then(response => {
-                setData(response)
+                setDataY(response.yoga)
+                setIsReady(true)
+            })
+        fetch(serverAPI)
+            .then(res => res.json())
+            .then(response => {
+                setDataM(response.meditation)
                 setIsReady(true)
             })
     }, [])
+
+    const getSearchValue = (e) => {
+        setSearchValue(e)
+    }
+
+    useEffect(() => {
+        const resultsY = dataY.filter(elt => elt.track.name.toLowerCase().includes(searchValue));
+        setSearchedDataY(resultsY)
+    }, [searchValue])
+
+    useEffect(() => {
+        const resultsM = dataM.filter(elt => elt.track.name.toLowerCase().includes(searchValue));
+        setSearchedDataM(resultsM)
+    }, [searchValue])
 
     if (isReady) {
         return (
@@ -47,10 +75,10 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <Search />
-                    <div id="spacer" />
-                    <ContentSection title='Recommended yoga for you' contentData={data.yoga}></ContentSection>
-                    <ContentSection title='Recommended meditation for you' contentData={data.meditation} />
+                    <Search getSearchValue={getSearchValue} />
+                    <div className="spacer" />
+                    <ContentSection title='Recommended yoga for you' contentData={searchValue != null ? searchedDataY : dataY} />
+                    <ContentSection title='Recommended meditation for you' contentData={searchValue != null ? searchedDataM : dataM} />
                 </main>
                 <Nav />
             </>
@@ -85,8 +113,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <br />
-                    <p>Loading data...</p>
+                    <div className="spacer"></div>
+                    <p>Loading...</p>
                 </main>
                 <Nav />
             </>

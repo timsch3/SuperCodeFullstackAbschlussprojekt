@@ -28,7 +28,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/welcome" element={<Welcome loginData={loginData} />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/home"
+          element={<Home
+            serverAPI={serverAPI}
+          />} />
         <Route path="/yoga"
           element={<YogaMedi
             serverAPI={serverAPI}
