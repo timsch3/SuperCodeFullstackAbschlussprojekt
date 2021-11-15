@@ -2,15 +2,15 @@ import './home.scss'
 import Titel from '../../components/titel/titel'
 import Nav from '../../components/nav/nav'
 import { Link } from 'react-router-dom';
-import Search from '../../components/search/search';
+// import Search from '../../components/search/search';
 import { useState, useEffect } from 'react'
 import ContentSection from '../../components/contentSection/contentSection'
 
 const Home = () => {
     const [data, setData] = useState(null)
     const [isReady, setIsReady] = useState(false)
-    const [newData, setNewData] = useState([])
-    const [searchData, setSearchData] = useState('')
+    // const [newData, setNewData] = useState([])
+    // const [searchData, setSearchData] = useState('')
 
     useEffect(() => {
         fetch('http://localhost:3000/')
@@ -18,21 +18,20 @@ const Home = () => {
             .then(response => {
                 setData(response)
                 setIsReady(true)
-                console.log(data)
             })
-        setSearchData('')
+        // setSearchData('')
     }, [])
 
-    const getSearchData = (e) => {
-        setSearchData(e)
-    }
+    // const getSearchData = (e) => {
+    //     setSearchData(e)
+    // }
 
-    useEffect(() => {
-        const results = data.yoga.filter(elt =>
-            elt.track.name.toLowerCase().includes(searchData)
-        );
-        setNewData(results)
-    }, [searchData])
+    // useEffect(() => {
+    //     const results = data.yoga.filter(elt =>
+    //         elt.track.name.toLowerCase().includes(searchData)
+    //     );
+    //     setNewData(results)
+    // }, [searchData])
 
     if (isReady) {
         return (
@@ -63,7 +62,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <Search data={searchData !== 0 ? newData : data} />
+                    {/* <Search data={searchData !== 0 ? newData : data} /> */}
                     <div className="spacer" />
                     <ContentSection title='Recommended yoga for you' contentData={data.yoga}></ContentSection>
                     <ContentSection title='Recommended meditation for you' contentData={data.meditation} />
