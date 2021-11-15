@@ -48,6 +48,7 @@ const Home = () => {
                         </div>
                     </div>
                     <Search />
+                    <div id="spacer" />
                     <ContentSection title='Recommended yoga for you' contentData={data.yoga}></ContentSection>
                     <ContentSection title='Recommended meditation for you' contentData={data.meditation} />
                 </main>
