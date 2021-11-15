@@ -10,7 +10,7 @@ const Home = () => {
     const [data, setData] = useState(null)
     const [isReady, setIsReady] = useState(false)
     useEffect(() => {
-        fetch('http://localhost:3000/home')
+        fetch('http://localhost:3000/')
             .then(res => res.json())
             .then(response => {
                 setData(response)

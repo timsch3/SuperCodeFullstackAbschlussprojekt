@@ -20,7 +20,7 @@ const YogaMedi = (props) => {
 
     useEffect(() => {
         if (titel == 'Yoga') {
-            fetch('http://localhost:3000/home')
+            fetch('http://localhost:3000/')
                 .then(res => res.json())
                 .then(response => {
                     setData(response.yoga)
@@ -28,7 +28,7 @@ const YogaMedi = (props) => {
                 })
             setSearchData('')
         } else {
-            fetch('http://localhost:3000/home')
+            fetch('http://localhost:3000/')
                 .then(res => res.json())
                 .then(response => {
                     setData(response.meditation)
@@ -48,7 +48,6 @@ const YogaMedi = (props) => {
         );
         setNewData(results)
     }, [searchData])
-
 
     return (
         <>
