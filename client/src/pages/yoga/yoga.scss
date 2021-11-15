@@ -1,11 +1,74 @@
 .content-yom {
     top: 10vh;
-    position: relative;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    p {
+        margin: 30px 0;
+    }
+    .cat-yom {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .search-yom {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .track-yom-background {
+        border-radius: 20px;
+        background: #FAF2DA;
+        margin-bottom: 15px;
+        width: 100%;
+        .track-yom {
+            border-radius: 20px;
+            padding: 0 15px;
+            height: 95px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: url('./maskGroup.png') center/cover no-repeat;
+            .track-yom-info {
+                display: flex;
+                flex-direction: column;
+                h2 {
+                    margin-bottom: 20px;
+                }
+                .track-yom-info-line {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 140px;
+                    p {
+                        color: #A1A4B2;
+                        margin: 0;
+                    }
+                    .dot-yom {
+                        width: 100%;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        background: #A1A4B2;
+                     }
+                }
+            }
+            .track-yom-play {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                background: #8E9775;
+                cursor: pointer;
+                img {
+                    width: 30%;
+                }
+            }
+        }   
+    }
+    .search-content {
+        width: 100%;
+    }
 }
 
-.category {
-    
-}

@@ -1,0 +1,33 @@
+.content-search {
+    // display: grid;  
+    // justify-content: center;
+    // grid-template-columns: 163px 163px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    .content-search-card {
+        position: relative;
+        img {
+            border-radius: 20px;
+            background: #000;
+            background: grey;
+            max-width: 10.2rem;
+            height: 100%;
+        }
+        h2 {
+            position: absolute;
+            color: #fff;
+            left: 15px;
+            bottom: 15px;
+            width: 100px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+    }
+    
+}
+  
