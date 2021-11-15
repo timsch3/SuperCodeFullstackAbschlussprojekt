@@ -103,12 +103,10 @@ app.get("/logout", function (req, res) {
   res.redirect("http://localhost:8000/")
 })
 
-app.get('/', (req, res) => {
-  res.send('hello world')
-})
+
 //db Crud routing
 app.use('/api', dbRouter)
 //API
-app.use('/home', homeRouter)
+app.use('/', homeRouter)
 
 app.listen(process.env.PORT, () => console.log('i am Listening at', process.env.PORT))

@@ -3,7 +3,7 @@ const spotApi = { playLists:{}, yoga: [],meditation:[],sleep:[],top:[],kids:[] }
 
 
 const getCat = (req, res) => {
-  spotifyApi.searchPlaylists('Topyoga', {
+  spotifyApi.searchPlaylists('yoga', {
     country: 'DE',
     locale: 'sv_SE'
   })
