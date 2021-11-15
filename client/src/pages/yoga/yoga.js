@@ -11,16 +11,32 @@ import ContentSearch from '../../components/contentSearch/contentSearch'
 
 const Yoga = () => {
 
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
+    const [newData, setNewData] = useState([])
+    const [searchData, setSearchData] = useState('')
+    const [isReadySearch, setIsReadySearch] = useState(false)
     const [isReady, setIsReady] = useState(false)
+
     useEffect(() => {
         fetch('http://localhost:3000/home')
             .then(res => res.json())
             .then(response => {
-                setData(response)
+                setData(response.yoga)
                 setIsReady(true)
             })
-    }, [])
+    }, []);
+
+    const getSearchData = (e) => {
+        setSearchData(e)
+    }
+
+    useEffect(() => {
+        setIsReadySearch(true)
+        const results = data.filter(elt =>
+            elt.track.name.toLowerCase().includes(searchData)
+        );
+        setNewData(results)
+    }, [searchData])
 
     return (
         <>
@@ -32,7 +48,7 @@ const Yoga = () => {
                     <Category />
                 </div>
                 <div className="search-yom">
-                    <Search />
+                    <Search getSearchData={getSearchData} />
                 </div>
                 <div className="track-yom-background">
                     <div className="track-yom">
@@ -52,7 +68,7 @@ const Yoga = () => {
                 {isReady
                     ?
                     <div className="search-content">
-                        <ContentSearch data={data.yoga} />
+                        <ContentSearch data={isReadySearch && searchData != 0 ? newData : data} />
                     </div>
                     :
                     <div>Loading...</div>
