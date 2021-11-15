@@ -19,24 +19,24 @@ const spotifyApi = require('./config/apiConfig')
 const db = require('./db/index')
 
 //require routes
-const dbRouter = require('./routes/db-Crud-router') 
+const dbRouter = require('./routes/db-Crud-router')
 const homeRouter = require('./routes/spotify-Home-router');
 const { Mongoose } = require('mongoose');
 
 //middleware.
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 app.use(cors());
 app.use(express.json())
 
 //dataBase
-db.on('error',console.error.bind(console,'MongoDB connection error:'))
-mongoose.connect(process.env.DBKEY, { useNewUrlParser: true, useUnifiedTopology: true ,useCreateIndex:true});
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+mongoose.connect(process.env.DBKEY, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
 
 app.use(session({
-    secret:'Our little secret',
-    resave:false,
-    saveUninitialized:false,
+  secret: 'Our little secret',
+  resave: false,
+  saveUninitialized: false,
 }));
 
 //passport init
@@ -44,13 +44,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //google Strategy
-const user = 
-passport.use(User.createStrategy());
-passport.serializeUser(function(user, done) {
+const user =
+  passport.use(User.createStrategy());
+passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
+passport.deserializeUser(function (id, done) {
+  User.findById(id, function (err, user) {
     done(err, user);
   });
 });
@@ -76,37 +76,39 @@ passport.use(new GoogleStrategy({
 
 // Retrieve an access token from spotApi
 spotifyApi
-.clientCredentialsGrant()
-.then(data => {
-    console.log(data)
-    spotifyApi.setAccessToken(data.body['access_token'])})
-.catch(error => console.log('Something went wrong when retrieving an access token', error));
+  .clientCredentialsGrant()
+  .then(data => {
+    // console.log(data)
+    spotifyApi.setAccessToken(data.body['access_token'])
+  })
+  .catch(error => console.log('Something went wrong when retrieving an access token', error));
 
 
 //google route
 app.get('/auth/google',
-    passport.authenticate('google',{scope:["profile"]})
+  passport.authenticate('google', { scope: ["profile"] })
 );
 
 app.get("/auth/google/callback",
-    passport.authenticate("google",{failureRedirect:
-     "http://localhost:8000"
-    }),
-    function(req,res){
-        res.redirect("http://localhost:8000/welcome");
-    }
+  passport.authenticate("google", {
+    failureRedirect:
+      "http://localhost:8000"
+  }),
+  function (req, res) {
+    res.redirect("http://localhost:8000/welcome");
+  }
 )
 
-app.get("/logout",function(req,res){
-    res.redirect("http://localhost:8000/")
+app.get("/logout", function (req, res) {
+  res.redirect("http://localhost:8000/")
 })
 
-app.get('/',(req,res) =>{
-    res.send('hello world')
+app.get('/', (req, res) => {
+  res.send('hello world')
 })
 //db Crud routing
-app.use('/api',dbRouter)
+app.use('/api', dbRouter)
 //API
-app.use('/home',homeRouter)
+app.use('/home', homeRouter)
 
-app.listen(process.env.PORT,()=>console.log('i am Listening at',process.env.PORT))
+app.listen(process.env.PORT, () => console.log('i am Listening at', process.env.PORT))

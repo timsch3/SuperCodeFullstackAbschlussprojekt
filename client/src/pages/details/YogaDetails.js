@@ -1,26 +1,42 @@
 import './details.scss'
-import Titel from '../../components/titel/titel'
+import Nav from '../../components/nav/nav'
+import TopButtons from '../../components/topButtons/topButtons'
+import { Link } from 'react-router-dom'
+
+
+let sectionStyle = {
+    width: "100vw",
+    height: "60vh",
+    backgroundImage: "url(/images/yoga.png)",
+    backgroundSize: "cover",
+
+};
 
 const YogaDetail = () => {
     return (
         <div>
-            <Titel />
-            <section>
-                <img className="yogaDetail__icon" src="/images/yoga.png" alt=""></img>
-                <img className="yogaDetail__icon" src="/images/icons/arrow-back.svg" alt=""></img>
-                <img className="yogaDetail__icon" src="/images/icons/favorites.svg" alt=""></img>
-                <img className="yogaDetail__icon" src="/images/icons/download.svg" alt=""></img>
+
+            <TopButtons />
+            <section style={sectionStyle} />
+
+            <section className="yogaDetail__main">
+                <h1>Healthy Back</h1>
+                <p>BEGINNER</p>
+                <p> Ease the mind into a restful night’s sleep  with
+                    these deep, ambient tones.</p>
             </section>
-            <h1>Healty Back</h1>
-            <p>BEGINNER</p>
-            <p> Ease the mind into a restful night’s sleep  with
-                these deep, amblent tones.</p>
-            <img className="yogaDetail__icon" src="/images/icons/favorites.svg" alt=""></img>
-            <p>[XXX]Favorits</p>
-            <img className="yogaDetail__icon" src="/images/icons/listening.svg" alt=""></img>
-            <p>[XXX]Listening</p>
+            <section className="yogaDetail__flex_space">
+                <div className="detail__flex">
+                    <img className="yogaDetail__icon" src="/images/icons/favorites.svg" alt=""></img>
+                    <p>[XXX]Favorits</p>
+                </div>
+                <div className="detail__flex">
+                    <img className="yogaDetail__icon" src="/images/icons/listening.svg" alt=""></img>
+                    <p>[XXX]Listening</p>
+                </div>
+            </section>
 
-
+            <Nav />
 
         </div>
     );

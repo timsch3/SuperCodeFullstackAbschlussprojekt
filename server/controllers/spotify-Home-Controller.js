@@ -1,15 +1,15 @@
 const spotifyApi = require('../config/apiConfig')
-const spotApi = { playLists: {}, yoga: [],meditation:[] }
+const spotApi = { playLists:{}, yoga: [],meditation:[],sleep:[],top:[],kids:[] }
 
 
 const getCat = (req, res) => {
-  spotifyApi.searchPlaylists('meditation&yoga', {
+  spotifyApi.searchPlaylists('Topyoga', {
     country: 'DE',
     locale: 'sv_SE'
   })
     .then(function (playLists) {
 
-      console.log(playLists.body.playlists.items);
+      
       spotApi.playLists = playLists.body.playlists.items
 
       
@@ -21,7 +21,32 @@ const getCat = (req, res) => {
           spotifyApi.getPlaylist('3ksy3Zso4vdt4JIzTYvpF9')
           .then(function (medPlayList) {
             spotApi.meditation = medPlayList.body.tracks.items
-            res.json(spotApi)
+
+            spotifyApi.getPlaylist('0cFSN77u5YULfYGcVL55DG')
+            .then(function (sleepPlayList) {
+
+              spotApi.sleep = sleepPlayList.body.tracks.items
+
+              spotifyApi.getPlaylist('0cFSN77u5YULfYGcVL55DG')
+              .then(function (topPlayList) {
+  
+                spotApi.top = topPlayList.body.tracks.items
+                
+                res.json(spotApi)
+                
+      
+              }, function (err) {
+                console.log('Something went wrong!', err);
+              });
+
+              
+              
+    
+            }, function (err) {
+              console.log('Something went wrong!', err);
+            });
+           
+           
   
   
           }, function (err) {
