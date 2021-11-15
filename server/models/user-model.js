@@ -5,14 +5,15 @@ const findOrCreate = require('mongoose-findorcreate');
 
 const UserData = new Schema(
     {   
-        userId:{
+        _id:{
             type:String,
+            required:true
         },
         photo:{
             type:String,
 
         },
-        userName:{
+        username:{
             type:String,
             required:true
         },
@@ -20,7 +21,7 @@ const UserData = new Schema(
             type:String,
             required:true
         },
-        googleId:{
+        googleid:{
             type:String,
             required:true,
         },
