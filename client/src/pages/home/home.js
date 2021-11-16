@@ -47,6 +47,7 @@ const Home = (props) => {
     }, [searchValue])
 
     if (isReady) {
+        console.log(dataY)
         return (
             <>
                 <Titel />

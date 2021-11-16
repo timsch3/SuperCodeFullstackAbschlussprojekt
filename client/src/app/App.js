@@ -8,6 +8,7 @@ import YogaDetail from '../pages/details/YogaDetails'
 import MediDetail from '../pages/details/MediDetail'
 import Music from '../pages/music/music'
 import User from '../pages/user/user'
+import Player from '../pages/player/player'
 
 import {
   BrowserRouter,
@@ -52,6 +53,7 @@ function App() {
           element={<MediDetail />} />
         <Route path="/music" element={<Music />} />
         <Route path="/user" element={<User serverAPI={serverAPI} />} />
+        <Route path="/player/:id" element={<Player />} />
       </Routes>
     </BrowserRouter>
   );
