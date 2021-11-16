@@ -25,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serverStart":"node index.js"
+    "serverStart": "node index.js"
   },
   "proxy": "http://localhost:3000",
   "eslintConfig": {

@@ -1,7 +1,6 @@
 import './details.scss'
 import Nav from '../../components/nav/nav'
 import TopButtons from '../../components/topButtons/topButtons'
-import { Link } from 'react-router-dom'
 
 let meditate = {
     width: "100vw",

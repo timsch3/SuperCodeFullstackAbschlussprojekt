@@ -1,17 +1,9 @@
-.icon{
-    display: flex;
-                justify-content: center;
-                border-radius: 50%;
-                width: 20px;
-                height: 20px;
-                background: #A1A4B2;
-                cursor: pointer;
-                img {
-                    width: 50%;
-                }
-            }
 
-            h2{
+
+#music{
+    .musicHeader{
+        margin-bottom:3rem;
+         .mainHeader{
                 display: flex;
                 justify-content: center;
                 padding-top:70px;
@@ -19,21 +11,21 @@
                 color:#3F414E;
                 font-weight: 900;
 
-            } h3{
+            } .breatheHeader{
                 display: flex;
                 justify-content: center;
                 padding-top:30px;
                 font-size: 15px;
                 color:#A1A4B2;
                 
-            } h4 {
+            } .playListHeader {
                 display: flex;
                 justify-content: center;
                 padding-top:20px;
                 font-size: 15px;
                 color:#A1A4B2;
             }
-          
+        }
 .iconsWrapper{
     display: flex;
     justify-content: space-around;
@@ -50,10 +42,42 @@
 }
 
 
+.playList{
 
+    width:90%;
+    margin: 0 auto;
+    .playListItems{
+        display:flex;
+        height:2.7rem;
+        margin:1rem 0;
+        padding-bottom:1.3rem;
+        border-bottom: 1px solid rgba(173, 184, 217, 0.15);
+        align-items:center;
+        .musicContent{
+            p:first-of-type{
+                font-weight:800;
+                font-size:1rem;
+                margin-bottom:0.4rem;
+                color:#3F414E;
+            } p:last-of-type{
 
+                color:#A1A4B2;
+            }
+        }
+    }
+    .playicon{
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        height:40px;
+        width:40px;
+        border:1px solid #ADB8D9;
+        border-radius:50%;
+        margin-right:1rem;
+    }
+}
 
-
+}
 
 
 

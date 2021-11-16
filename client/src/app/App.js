@@ -10,6 +10,8 @@ import Music from '../pages/music/music'
 import User from '../pages/user/user'
 import Player from '../pages/player/player'
 
+import { useState, useEffect } from 'react'
+
 import {
   BrowserRouter,
   Routes,
@@ -19,6 +21,35 @@ import {
 const serverAPI = 'http://localhost:3000/'
 
 function App() {
+
+  const [user, setUser] = useState({})
+  const [error, setError] = useState(null)
+  const [authenticated, setAuthenticated] = useState(false)
+
+  useEffect(() => {
+    fetch("http://localhost:3000/auth/login/success", {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true
+      }
+    })
+      .then(response => {
+        if (response.status === 200) return response.json();
+        throw new Error("failed to authenticate user");
+      })
+      .then(responseJson => {
+        setAuthenticated(true)
+        setUser(responseJson.user)
+      })
+      .catch(error => {
+        setAuthenticated(false)
+        setError("Failed to authenticate user")
+      });
+  }, [])
+
   return (
     <BrowserRouter>
       <Routes>

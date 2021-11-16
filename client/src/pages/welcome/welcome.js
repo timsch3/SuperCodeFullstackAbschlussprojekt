@@ -1,8 +1,9 @@
 import './welcome.scss';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
 
 import React from 'react';
 import TextField from '@mui/material/TextField';
@@ -17,22 +18,23 @@ import Button from '../../components/button/button';
 
 const Login = (props) => {
 
+    const { username } = props;
+
     const [isToggled, setIsToggled] = useState(true);
     const [value, setValue] = useState(new Date());
-    const [days, setDays] = useState(['SU', 'M', 'T', 'W', 'TH', 'F', 'S']);
     const toggle = () => setIsToggled(!isToggled);
 
+    const days = ['SU', 'M', 'T', 'W', 'TH', 'F', 'S'];
     const getWeekDay = (date) => {
         return days[date.getDay()];
     }
 
     const getWelcome = () => {
-
         return (
             <>
                 <Titel />
                 <div className="content-wel">
-                    <h2>Hi Uladzimir,<br />
+                    <h2>Hi {username},<br />
                         welcome<br />
                         to Silent Moon
                     </h2>
