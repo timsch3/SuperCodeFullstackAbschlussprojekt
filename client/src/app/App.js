@@ -54,9 +54,10 @@ function App() {
       {authenticated ?
         <BrowserRouter>
           <Routes>
-            <Route path="/welcome"
+            <Route path="/"
               element={<Welcome
-                username={user.username} />} />
+                username={user.username} />}
+            />
             <Route path="/home"
               element={<Home
                 serverAPI={serverAPI}
