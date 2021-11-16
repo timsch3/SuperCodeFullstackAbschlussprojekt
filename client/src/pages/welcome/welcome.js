@@ -1,8 +1,9 @@
 import './welcome.scss';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
 
 import React from 'react';
 import TextField from '@mui/material/TextField';
@@ -17,17 +18,44 @@ import Button from '../../components/button/button';
 
 const Login = (props) => {
 
+    const [user, setUser] = useState({})
+    const [error, setError] = useState(null)
+    const [authenticated, setAuthenticated] = useState(false)
+
     const [isToggled, setIsToggled] = useState(true);
     const [value, setValue] = useState(new Date());
-    const [days, setDays] = useState(['SU', 'M', 'T', 'W', 'TH', 'F', 'S']);
     const toggle = () => setIsToggled(!isToggled);
 
+    const days = ['SU', 'M', 'T', 'W', 'TH', 'F', 'S'];
     const getWeekDay = (date) => {
         return days[date.getDay()];
     }
 
-    const getWelcome = () => {
+    useEffect(() => {
+        fetch("http://localhost:3000/auth/", {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Credentials": true
+            }
+        })
+            .then(response => {
+                console.log(response)
+            })
+            .then(responseJson => {
+                setAuthenticated(true)
+                setUser(responseJson)
+                console.log(responseJson)
+            })
+            .catch(error => {
+                setAuthenticated(false)
+                setError("Failed to authenticate user")
+            });
+    }, [])
 
+    const getWelcome = () => {
         return (
             <>
                 <Titel />
