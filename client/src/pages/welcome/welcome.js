@@ -31,29 +31,29 @@ const Login = (props) => {
         return days[date.getDay()];
     }
 
-    useEffect(() => {
-        fetch("http://localhost:3000/auth/", {
-            method: "GET",
-            credentials: "include",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Credentials": true
-            }
-        })
-            .then(response => {
-                console.log(response)
-            })
-            .then(responseJson => {
-                setAuthenticated(true)
-                setUser(responseJson)
-                console.log(responseJson)
-            })
-            .catch(error => {
-                setAuthenticated(false)
-                setError("Failed to authenticate user")
-            });
-    }, [])
+    // useEffect(() => {
+    //     fetch("http://localhost:3000/auth/login/success", {
+    //         method: "GET",
+    //         credentials: "include",
+    //         headers: {
+    //             Accept: "application/json",
+    //             "Content-Type": "application/json",
+    //             "Access-Control-Allow-Credentials": true
+    //         }
+    //     })
+    //         .then(response => {
+    //             if (response.status === 200) return response.json();
+    //             throw new Error("failed to authenticate user");
+    //         })
+    //         .then(responseJson => {
+    //             setAuthenticated(true)
+    //             setUser(responseJson.user)
+    //         })
+    //         .catch(error => {
+    //             setAuthenticated(false)
+    //             setError("Failed to authenticate user")
+    //         });
+    // }, [])
 
     const getWelcome = () => {
         return (
