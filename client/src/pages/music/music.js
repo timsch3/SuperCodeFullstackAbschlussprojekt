@@ -5,15 +5,14 @@ import Titel from '../../components/titel/titel';
 
 const Music = () => {
 
-    
     return (
-        <section>
+        <section id="music">
         <div className="musicHeader">
            <Titel />
 
-           <h2>Good Vibes</h2>
-           <h4>PLAYLIST</h4>
-           <h3>Breathe. Sense. Feel. Transcend.</h3>
+           <h2 className="mainHeader">Good Vibes</h2>
+           <h4 className="playListHeader">PLAYLIST</h4>
+           <h3 className="breatheHeader">Breathe. Sense. Feel. Transcend.</h3>
            <div className="iconsWrapper">
            <figure className="iconHeart">
            <img  src="/images/icons/favorites.svg" alt="heart" />
@@ -29,53 +28,66 @@ const Music = () => {
            </figure>
            </div>
         </div>
-        <article>
-            <div className="playList">
+
+        <article className="playList">
+            <div className="playListItems">
                 <figure className="playicon">
                     <img src="/images/icons/playIconGrey.png" alt="playIconGrey" />
                 </figure>
+                <div className="musicContent">
                 <p>Blunda</p>
                 <p>3:33</p>
+                </div>
             </div>
 
-            <div className="playList">
+            <div className="playListItems">
                 <figure className="playicon">
                     <img src="/images/icons/playIconGrey.png" alt="playIconGrey" />
                 </figure>
-                <p>Blunda</p>
-                <p>3:33</p>
+                <div className="musicContent">
+                <p>Big Sky</p>
+                <p>4:04</p>
+                </div>
             </div>
 
-            <div className="playList">
+            <div className="playListItems">
                 <figure className="playicon">
                     <img src="/images/icons/playIconGrey.png" alt="playIconGrey" />
                 </figure>
-                <p>Blunda</p>
-                <p>3:33</p>
+               <div className="musicContent">
+                <p>Endless Nights</p>
+                <p>2:59</p>
+                </div>
             </div>
 
-            <div className="playList">
+            <div className="playListItems">
                 <figure className="playicon">
                     <img src="/images/icons/playIconGrey.png" alt="playIconGrey" />
                 </figure>
-                <p>Blunda</p>
-                <p>3:33</p>
+                <div className="musicContent">
+                <p>Te Urewera</p>
+                <p>3:05</p>
+                </div>
             </div>
 
-            <div className="playList">
+            <div className="playListItems">
                 <figure className="playicon">
                     <img src="/images/icons/playIconGrey.png" alt="playIconGrey" />
                 </figure>
-                <p>Blunda</p>
-                <p>3:33</p>
+                <div className="musicContent">
+                <p>Halvmane</p>
+                <p>2:38</p>
+                </div>
             </div>
 
-            <div className="playList">
+            <div className="playListItems">
                 <figure className="playicon">
                     <img src="/images/icons/playIconGrey.png" alt="playIconGrey" />
                 </figure>
-                <p>Blunda</p>
-                <p>3:33</p>
+                <div className="musicContent">
+                <p>Phaedra</p>
+                <p>3:16</p>
+                </div>
             </div>
             
 
