@@ -20,12 +20,11 @@
     .but-wel {
         position: absolute;
         bottom: 30px;
-        width: 90%; 
+        width: calc(100% - 30px); 
     }
     .but-rem {
-      
         bottom: 0;
-        width: 90%; 
+        width: calc(100% - 30px); 
     }
     .but-but {
         display: flex;
@@ -75,22 +74,15 @@
                     height: 40px;
                     border-radius: 50px;
                     background: #8E9775;
-                    &:nth-of-type(5){
-                        border: 1px solid #8E9775;
-                        background: #fff;
-                        span {
-                            color: #8E9775;
-                        }
-                    }
-                    &:nth-of-type(6){
-                        border: 1px solid #8E9775;
-                        background: #fff;
-                        span {
-                            color: #8E9775;
-                        }
-                    }
                     span{
                         color: #fff;
+                    }
+                }
+                .today{
+                    border: 1px solid #8E9775;
+                    background: #fff;
+                    span {
+                        color: #8E9775;
                     }
                 }
             }  
