@@ -28,6 +28,7 @@ const Home = () => {
                     <div id={'user-profile'}>
                         <img src={userImagePath} alt={data.userName} />
                         <h2>{data.userName}</h2>
+                        <Link to='/auth/logout'>Log out</Link>
                     </div>
                     <Search />
                     <div id={'user-favs-yoga'}>
