@@ -1,5 +1,6 @@
 const passport = require('passport');
 
+
 const google = passport.authenticate('google', { scope: ["profile"] })
 
 const googleCall = passport.authenticate("google", {
@@ -8,8 +9,17 @@ const googleCall = passport.authenticate("google", {
   })
 
   const googleBack = (req, res) =>{
-      console.log(req)
-    res.redirect("http://localhost:8000/welcome");
+      console.log(req.user)
+      if (!req.user) {
+        res.status(401).json({
+          authenticated: false,
+          message: "user has not been authenticated"
+        });
+      } else {
+ 
+        res.redirect("http://localhost:8000/welcome");
+      }
+    
   
 }
  
