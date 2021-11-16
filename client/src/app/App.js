@@ -1,5 +1,6 @@
 import '../style/style.scss'
 import Login from '../pages/login/login'
+import Sign from '../pages/sign/sign'
 import Welcome from '../pages/welcome/welcome'
 import Home from '../pages/home/home'
 import YogaMedi from '../pages/yogaMedi/yogaMedi'
@@ -7,9 +8,6 @@ import YogaDetail from '../pages/details/YogaDetails'
 import MediDetail from '../pages/details/MediDetail'
 import Music from '../pages/music/music'
 import User from '../pages/user/user'
-
-import dataLogin from '../data/data'
-import { useState } from 'react'
 
 import {
   BrowserRouter,
@@ -20,14 +18,19 @@ import {
 const serverAPI = 'http://localhost:3000/'
 
 function App() {
-
-  const [loginData, setLoginData] = useState(dataLogin)
-
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/welcome" element={<Welcome loginData={loginData} />} />
+        <Route path="/sign-in"
+          element={<Sign
+            titel={'Welcome Back!'}
+          />} />
+        <Route path="/sign-up"
+          element={<Sign
+            titel={'Create your account'}
+          />} />
+        <Route path="/welcome" element={<Welcome />} />
         <Route path="/home"
           element={<Home
             serverAPI={serverAPI}
@@ -48,7 +51,7 @@ function App() {
         <Route path="/meditate-details"
           element={<MediDetail />} />
         <Route path="/music" element={<Music />} />
-        <Route path="/user" element={<User />} />
+        <Route path="/user" element={<User serverAPI={serverAPI} />} />
       </Routes>
     </BrowserRouter>
   );

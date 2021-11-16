@@ -18,11 +18,13 @@ import Button from '../../components/button/button';
 const Login = (props) => {
 
     const [isToggled, setIsToggled] = useState(true);
+    const [value, setValue] = useState(new Date());
+    const [days, setDays] = useState(['SU', 'M', 'T', 'W', 'TH', 'F', 'S']);
     const toggle = () => setIsToggled(!isToggled);
 
-    const [value, setValue] = useState(new Date());
-
-    const { loginData } = props;
+    const getWeekDay = (date) => {
+        return days[date.getDay()];
+    }
 
     const getWelcome = () => {
 
@@ -76,13 +78,9 @@ const Login = (props) => {
                         </div>
                         <div className="daysList">
                             <ul>
-                                <li><span>SU</span></li>
-                                <li><span>M</span></li>
-                                <li><span>T</span></li>
-                                <li><span>W</span></li>
-                                <li><span>TH</span></li>
-                                <li><span>F</span></li>
-                                <li><span>S</span></li>
+                                {days.map((elt, i) => (
+                                    <li className={getWeekDay(value) === elt ? 'today' : null} key={i}><span>{elt}</span></li>
+                                ))}
                             </ul>
                         </div>
                     </div>

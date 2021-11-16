@@ -6,7 +6,8 @@ import Search from '../../components/search/search';
 import { useState, useEffect } from 'react'
 import api from '../../api/index'
 
-const Home = () => {
+const Home = (props) => {
+    const { serverAPI } = props
     const [data, setData] = useState(null)
     const [isReady, setIsReady] = useState()
     useEffect(() => {
@@ -28,6 +29,7 @@ const Home = () => {
                     <div id={'user-profile'}>
                         <img src={userImagePath} alt={data.userName} />
                         <h2>{data.userName}</h2>
+                        <Link to={'//' + serverAPI.slice(-17) + 'auth/logout'}>Log out</Link>
                     </div>
                     <Search />
                     <div id={'user-favs-yoga'}>
