@@ -1,11 +1,13 @@
 import './music.scss';
 import { useState, useEffect } from 'react'
 import Titel from '../../components/titel/titel';
+import Nav from '../../components/nav/nav';
 
 
 const Music = () => {
 
     return (
+        <>
         <section id="music">
         <div className="musicHeader">
            <Titel />
@@ -89,10 +91,10 @@ const Music = () => {
                 <p>3:16</p>
                 </div>
             </div>
-            
-
         </article>
         </section>
+        <Nav />
+        </>
     );
 }
 
