@@ -14,6 +14,7 @@ const Home = () => {
             const data = await api.getAllData()
             setData(data.data.data[0])
             setIsReady(true)
+            console.log(data)
         }
         fetchProducts()
     }, [])

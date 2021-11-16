@@ -105,7 +105,7 @@ const YogaMedi = (props) => {
                             </div>
                         </div>
                         <div className="track-yom-play">
-                            <img src="/images/icons/list/play.svg"></img>
+                            <img src="/images/icons/list/play.svg" alt="" />
                         </div>
                     </div>
                 </div>
