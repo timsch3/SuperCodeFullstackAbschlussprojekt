@@ -46,6 +46,7 @@ function App() {
       .catch(error => {
         setAuthenticated(false)
         setError("Failed to authenticate user")
+        console.log(error)
       });
   }, [])
 
