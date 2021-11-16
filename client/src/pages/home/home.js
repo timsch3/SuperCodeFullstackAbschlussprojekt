@@ -47,7 +47,6 @@ const Home = (props) => {
     }, [searchValue])
 
     if (isReady) {
-        console.log(dataY)
         return (
             <>
                 <Titel />
@@ -55,31 +54,31 @@ const Home = (props) => {
                     <h2>Good morning [username]</h2>
                     <p id={'we-hope'}>We hope you have a good day</p>
                     <div id={'home-lessons'}>
-                        <div className={'home-lesson home-lessonL'} style={{ backgroundImage: `url(/images/home/healthy-back.png)` }}>
-                            <div className="home-lesson-middle">
+                        <div className={'home-lesson home-lessonL'} style={{ backgroundImage: 'url(/images/home/healthy-back.png)' }}>
+                            <div className={"home-lesson-middle"}>
                                 <h3>Healthy<br />Back</h3>
                                 <p>BEGINNER</p>
                             </div>
-                            <div className="home-lesson-bottom">
+                            <div className={"home-lesson-bottom"}>
                                 <span>3-10 MIN</span>
                                 <Link to='/yoga-details'>START</Link>
                             </div>
                         </div>
                         <div className={'home-lesson home-lessonR'} style={{ backgroundImage: `url(/images/home/meditation.png)` }}>
-                            <div className="home-lesson-middle">
+                            <div className={"home-lesson-middle"}>
                                 <h3>Meditation</h3>
                                 <p>BEGINNER</p>
                             </div>
-                            <div className="home-lesson-bottom">
+                            <div className={"home-lesson-bottom"}>
                                 <span>3-10 MIN</span>
                                 <Link to='/meditate-details'>START</Link>
                             </div>
                         </div>
                     </div>
                     <Search getSearchValue={getSearchValue} />
-                    <div className="spacer" />
-                    <ContentSection title='Recommended yoga for you' contentData={searchValue != null ? searchedDataY : dataY} />
-                    <ContentSection title='Recommended meditation for you' contentData={searchValue != null ? searchedDataM : dataM} />
+                    <div className={"spacer"} />
+                    <ContentSection title='Recommended yoga for you' contentData={searchValue != null ? searchedDataY : dataY} contentType='yoga' />
+                    <ContentSection title='Recommended meditation for you' contentData={searchValue != null ? searchedDataM : dataM} contentType='meditation' />
                 </main>
                 <Nav />
             </>

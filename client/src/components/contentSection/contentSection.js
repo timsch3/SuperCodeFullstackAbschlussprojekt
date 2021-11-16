@@ -10,7 +10,7 @@ const ContentSection = (props) => {
                 {props.contentData.map((elt, key) => {
                     return (
                         <div className={'content-card'} key={key}>
-                            <Link to={`/player/${elt.track.id}`}>
+                            <Link to={`/player/${props.contentType}/${elt.track.id}`}>
                                 <img src={elt.track.album.images[0].url} alt={elt.track.name} />
                                 <h3>{elt.track.name}</h3>
                                 <p>{(elt.track.duration_ms * 0.000016666666666667).toFixed(0)} MIN</p>

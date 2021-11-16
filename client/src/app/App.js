@@ -53,7 +53,7 @@ function App() {
           element={<MediDetail />} />
         <Route path="/music" element={<Music />} />
         <Route path="/user" element={<User serverAPI={serverAPI} />} />
-        <Route path="/player/:id" element={<Player />} />
+        <Route path="/player/:contentType/:id" element={<Player serverAPI={serverAPI} />} />
       </Routes>
     </BrowserRouter>
   );
