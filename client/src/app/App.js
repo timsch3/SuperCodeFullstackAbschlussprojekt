@@ -51,7 +51,7 @@ function App() {
         <Route path="/meditate-details"
           element={<MediDetail />} />
         <Route path="/music" element={<Music />} />
-        <Route path="/user" element={<User />} />
+        <Route path="/user" element={<User serverAPI={serverAPI} />} />
       </Routes>
     </BrowserRouter>
   );

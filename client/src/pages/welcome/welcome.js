@@ -3,6 +3,7 @@ import './welcome.scss';
 import { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
+import PropTypes from "prop-types";
 
 import React from 'react';
 import TextField from '@mui/material/TextField';
@@ -31,14 +32,22 @@ const Login = (props) => {
     }
 
     useEffect(() => {
-        fetch("http://localhost:3000/auth")
+        fetch("http://localhost:3000/auth/", {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Credentials": true
+            }
+        })
             .then(response => {
-                if (response.status === 200) return response.json();
-                throw new Error("failed to authenticate user");
+                console.log(response)
             })
             .then(responseJson => {
                 setAuthenticated(true)
-                setUser(responseJson.user)
+                setUser(responseJson)
+                console.log(responseJson)
             })
             .catch(error => {
                 setAuthenticated(false)
