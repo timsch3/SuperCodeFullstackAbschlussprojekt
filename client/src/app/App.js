@@ -8,6 +8,7 @@ import YogaDetail from '../pages/details/YogaDetails'
 import MediDetail from '../pages/details/MediDetail'
 import Music from '../pages/music/music'
 import User from '../pages/user/user'
+import Player from '../pages/player/player'
 
 import { useState, useEffect } from 'react'
 
@@ -57,14 +58,15 @@ function App() {
           <Routes>
             <Route path="/"
               element={<Welcome
-                username={user.username} />}
-            />
+                username={user.username}
+              />} />
             <Route path="/welcome"
               element={<Welcome
-                username={user.username} />}
-            />
+                username={user.username}
+              />} />
             <Route path="/home"
               element={<Home
+                username={user.username}
                 serverAPI={serverAPI}
               />} />
             <Route path="/yoga"
@@ -84,6 +86,7 @@ function App() {
               element={<MediDetail />} />
             <Route path="/music" element={<Music />} />
             <Route path="/user" element={<User serverAPI={serverAPI} />} />
+            <Route path="/player/:contentType/:id" element={<Player serverAPI={serverAPI} />} />
           </Routes>
         </BrowserRouter>
         :
@@ -98,9 +101,9 @@ function App() {
               element={<Sign
                 titel={'Create your account'}
               />} />
+
           </Routes>
-        </BrowserRouter>
-      }
+        </BrowserRouter>}
     </>
   );
 }
