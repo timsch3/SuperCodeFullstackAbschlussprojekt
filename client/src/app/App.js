@@ -58,6 +58,10 @@ function App() {
               element={<Welcome
                 username={user.username} />}
             />
+            <Route path="/welcome"
+              element={<Welcome
+                username={user.username} />}
+            />
             <Route path="/home"
               element={<Home
                 serverAPI={serverAPI}
