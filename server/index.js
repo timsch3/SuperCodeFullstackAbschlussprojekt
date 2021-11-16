@@ -27,8 +27,15 @@ const { Mongoose } = require('mongoose');
 
 //middleware.
 app.use(express.urlencoded({ extended: true }))
-app.use(cors());
 app.use(express.json())
+// set up cors to allow us to accept requests from our client
+app.use(
+  cors({
+    origin: "http://localhost:8000", // allow to server to accept request from different origin
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true // allow session cookie from browser to pass through
+  })
+);
 
 //dataBase
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
@@ -50,13 +57,14 @@ app.use(passport.session());
  spotifyApi
  .clientCredentialsGrant()
  .then(data => {
-   // console.log(data)
+  // console.log(data)
    spotifyApi.setAccessToken(data.body['access_token'])
  })
  .catch(error => console.log('Something went wrong when retrieving an access token', error));
 
 //google auth route
 app.use('/auth',authrouter)
+
 
 
 //db Crud routing
