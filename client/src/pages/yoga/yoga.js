@@ -1,4 +1,4 @@
-import './yogaMedi.scss';
+import './yoga.scss';
 
 import { useState, useEffect } from 'react';
 
@@ -14,7 +14,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 const YogaMedi = (props) => {
 
-    const { serverAPI, titel, description } = props;
+    const { serverAPI } = props;
 
     const [data, setData] = useState([]);
     const [searchedData, setSearchedData] = useState([]);
@@ -22,24 +22,14 @@ const YogaMedi = (props) => {
     const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
-        if (titel === 'Yoga') {
-            fetch(serverAPI)
-                .then(res => res.json())
-                .then(response => {
-                    setData(response.yoga);
-                    setIsReady(true);
-                })
-            setSearchValue('');
-        } else {
-            fetch(serverAPI)
-                .then(res => res.json())
-                .then(response => {
-                    setData(response.meditation);
-                    setIsReady(true);
-                })
-            setSearchValue('');
-        }
-    }, [titel]);
+        fetch(serverAPI)
+            .then(res => res.json())
+            .then(response => {
+                setData(response.yoga);
+                setIsReady(true);
+            })
+        setSearchValue('');
+    }, []);  // eslint-disable-line
 
     const getSearchValue = (e) => {
         setSearchValue(e);
@@ -50,7 +40,7 @@ const YogaMedi = (props) => {
             elt.track.name.toLowerCase().includes(searchValue)
         );
         setSearchedData(results);
-    }, [searchValue]);
+    }, [searchValue]);  // eslint-disable-line
 
     //category
     const getAllCat = () => {
@@ -85,8 +75,8 @@ const YogaMedi = (props) => {
             {isReady
                 ?
                 <div className="content-yom">
-                    <h1>{titel}</h1>
-                    <p>{description}</p>
+                    <h1>Yoga</h1>
+                    <p>Find your inner zen from annywhere.</p>
                     <div className="cat-yom">
                         <Category
                             getAllCat={getAllCat}
@@ -103,7 +93,7 @@ const YogaMedi = (props) => {
                         <Daily />
                     </div>
                     <div className="search-content">
-                        <ContentSearch data={searchValue != 0 ? searchedData : data} />
+                        <ContentSearch data={searchValue > 0 ? searchedData : data} />
                     </div>
                 </div>
                 :
