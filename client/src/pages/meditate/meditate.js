@@ -12,7 +12,7 @@ import ContentSearch from '../../components/contentSearch/contentSearch';
 
 import CircularProgress from '@mui/material/CircularProgress';
 
-const YogaMedi = (props) => {
+const Meditate = (props) => {
 
     const { serverAPI } = props;
 
@@ -44,7 +44,12 @@ const YogaMedi = (props) => {
 
     //category
     const getAllCat = () => {
-        window.location.reload();
+        fetch(serverAPI)
+            .then(res => res.json())
+            .then(response => {
+                setData(response.meditation);
+                setIsReady(true);
+            });
     }
 
     const getFavoritesCat = () => {
@@ -62,7 +67,6 @@ const YogaMedi = (props) => {
                 setData(response.sleep);
                 setIsReady(true);
             });
-        setSearchValue('');
     }
 
     const getKidsCat = () => {
@@ -90,10 +94,10 @@ const YogaMedi = (props) => {
                         <Search getSearchValue={getSearchValue} />
                     </div>
                     <div className="track-yom-background">
-                        <Daily />
+                        <Daily data={searchValue > 0 ? searchedData[0].track : data[0].track} />
                     </div>
                     <div className="search-content">
-                        <ContentSearch data={searchValue > 0 ? searchedData : data} />
+                        <ContentSearch contentData={searchValue > 0 ? searchedData : data} contentType='meditation' />
                     </div>
                 </div>
                 :
@@ -105,4 +109,4 @@ const YogaMedi = (props) => {
     );
 }
 
-export default YogaMedi;
+export default Meditate;

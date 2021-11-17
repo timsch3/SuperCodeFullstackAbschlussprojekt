@@ -30,6 +30,7 @@ function App() {
   useEffect(() => {
     fetch(`${serverAPI}auth/login/success`, {
       method: "GET",
+      mode: 'cors',
       credentials: "include",
       headers: {
         Accept: "application/json",

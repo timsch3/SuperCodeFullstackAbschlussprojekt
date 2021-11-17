@@ -10,24 +10,11 @@
         display: flex;
         flex-direction: column;
         h2 {
-            margin-bottom: 20px;
-        }
-        .track-yom-info-line {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 140px;
-            p {
-                color: #A1A4B2;
-                margin: 0;
-            }
-            .dot-yom {
-                width: 100%;
-                width: 5px;
-                height: 5px;
-                border-radius: 50%;
-                background: #A1A4B2;
-             }
+            font-size: 1.5em;
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
     .track-yom-play {

@@ -3,6 +3,8 @@ import TopButtons from '../../components/topButtons/topButtons';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+import CircularProgress from '@mui/material/CircularProgress';
+
 const Player = (props) => {
     const { serverAPI } = props;
     const { id } = useParams();
@@ -59,10 +61,8 @@ const Player = (props) => {
     else {
         return (<div>
             <TopButtons />
-            <div id="player-container">
-                <h2>
-                    Loading...
-                </h2>
+            <div className="loading">
+                <CircularProgress />
             </div>
         </div>);
     }
