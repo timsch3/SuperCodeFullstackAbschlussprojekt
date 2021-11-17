@@ -6,6 +6,9 @@ import Search from '../../components/search/search';
 import { useState, useEffect } from 'react';
 import ContentSection from '../../components/contentSection/contentSection';
 
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+
 const Home = (props) => {
 
     const { serverAPI, username } = props;
@@ -88,34 +91,9 @@ const Home = (props) => {
         return (
             <>
                 <Titel />
-                <main id={'home-main'}>
-                    <h2>Good morning </h2>
-                    <p id={'we-hope'}>We hope you have a good day</p>
-                    <div id={'home-lessons'}>
-                        <div className={'home-lesson home-lessonL'} style={{ backgroundImage: `url(/images/home/healthy-back.png)` }}>
-                            <div className="home-lesson-middle">
-                                <h3>Healthy<br />Back</h3>
-                                <p>BEGINNER</p>
-                            </div>
-                            <div className="home-lesson-bottom">
-                                <span>3-10 MIN</span>
-                                <Link to='/yoga-details'>START</Link>
-                            </div>
-                        </div>
-                        <div className={'home-lesson home-lessonR'} style={{ backgroundImage: `url(/images/home/meditation.png)` }}>
-                            <div className="home-lesson-middle">
-                                <h3>Meditation</h3>
-                                <p>BEGINNER</p>
-                            </div>
-                            <div className="home-lesson-bottom">
-                                <span>3-10 MIN</span>
-                                <Link to='/meditate-details'>START</Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="spacer"></div>
-                    <p>Loading...</p>
-                </main>
+                <div className="loading">
+                    <CircularProgress />
+                </div>
                 <Nav />
             </>
         )

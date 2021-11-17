@@ -5,9 +5,12 @@ import { useState, useEffect } from 'react';
 import Titel from '../../components/titel/titel';
 import Category from '../../components/category/Category';
 import Search from '../../components/search/search';
+import Daily from '../../components/daily/daily';
 import Nav from '../../components/nav/nav';
 
 import ContentSearch from '../../components/contentSearch/contentSearch';
+
+import CircularProgress from '@mui/material/CircularProgress';
 
 const YogaMedi = (props) => {
 
@@ -79,45 +82,34 @@ const YogaMedi = (props) => {
     return (
         <>
             <Titel />
-            <main className="content-yom">
-                <h1>{titel}</h1>
-                <p>{description}</p>
-                <div className="cat-yom">
-                    <Category
-                        getAllCat={getAllCat}
-                        getFavoritesCat={getFavoritesCat}
-                        getSadCat={getSadCat}
-                        getSleepCat={getSleepCat}
-                        getKidsCat={getKidsCat}
-                    />
-                </div>
-                <div className="search-yom">
-                    <Search getSearchValue={getSearchValue} />
-                </div>
-                <div className="track-yom-background">
-                    <div className="track-yom">
-                        <div className="track-yom-info">
-                            <h2>Daily Calm</h2>
-                            <div className="track-yom-info-line">
-                                <p>APR 30</p>
-                                <div className="dot-yom"></div>
-                                <p>PAUSE PRACTICE</p>
-                            </div>
-                        </div>
-                        <div className="track-yom-play">
-                            <img src="/images/icons/list/play.svg" alt="" />
-                        </div>
+            {isReady
+                ?
+                <div className="content-yom">
+                    <h1>{titel}</h1>
+                    <p>{description}</p>
+                    <div className="cat-yom">
+                        <Category
+                            getAllCat={getAllCat}
+                            getFavoritesCat={getFavoritesCat}
+                            getSadCat={getSadCat}
+                            getSleepCat={getSleepCat}
+                            getKidsCat={getKidsCat}
+                        />
                     </div>
-                </div>
-                {isReady
-                    ?
+                    <div className="search-yom">
+                        <Search getSearchValue={getSearchValue} />
+                    </div>
+                    <div className="track-yom-background">
+                        <Daily />
+                    </div>
                     <div className="search-content">
                         <ContentSearch data={searchValue != 0 ? searchedData : data} />
                     </div>
-                    :
-                    <div>Loading...</div>
-                }
-            </main>
+                </div>
+                :
+                <div className="loading">
+                    <CircularProgress />
+                </div>}
             <Nav />
         </>
     );

@@ -23,6 +23,10 @@
     margin-left: 0 !important; */
 }
 
+.css-4l7j15 {
+    background: none !important;
+}
+
 .css-o9ifx3 {
     padding: 0 !important;
     align-items: center !important;
@@ -47,10 +51,6 @@
 
 .MuiIconButton-root {
     width: 20px;
-}
-
-.MuiButtonBase-root {
-    /* height: 20px; */
 }
 
 .css-1hbyad5-MuiTypography-root {
