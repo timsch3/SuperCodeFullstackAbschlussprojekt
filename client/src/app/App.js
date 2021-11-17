@@ -19,7 +19,7 @@ import {
   Route
 } from "react-router-dom";
 
-const serverAPI = 'http://localhost:3000/';
+const serverAPI = 'https://supercode-fs-abschl-backend.herokuapp.com/';
 
 function App() {
 
