@@ -6,7 +6,7 @@
     position: fixed;
     inset: 0;
     padding: 15px;
-    a {
+    a, .topButtonsButton {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -23,7 +23,7 @@
 #topButtonsLeft {
     display: flex;
     justify-content: flex-start;
-    a {
+    .topButtonsButton {
         background-color: #FAF2DA;
         opacity: 0.7;
     }
