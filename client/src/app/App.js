@@ -27,7 +27,7 @@ function App() {
   const [authenticated, setAuthenticated] = useState(false)
 
   useEffect(() => {
-    fetch("http://localhost:3000/auth/login/success", {
+    fetch(`${serverAPI}auth/login/success`, {
       method: "GET",
       credentials: "include",
       headers: {
