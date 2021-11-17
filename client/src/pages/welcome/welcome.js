@@ -1,9 +1,8 @@
 import './welcome.scss';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
-import PropTypes from "prop-types";
 
 import React from 'react';
 import TextField from '@mui/material/TextField';
@@ -19,7 +18,6 @@ import Button from '../../components/button/button';
 const Login = (props) => {
 
     const { username } = props;
-    console.log(username)
     const [isToggled, setIsToggled] = useState(true);
     const [value, setValue] = useState(new Date());
     const toggle = () => setIsToggled(!isToggled);

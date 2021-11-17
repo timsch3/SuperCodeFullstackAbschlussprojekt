@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import ContentSection from '../../components/contentSection/contentSection';
 
 import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
 
 const Home = (props) => {
 
@@ -24,30 +23,30 @@ const Home = (props) => {
         fetch(serverAPI)
             .then(res => res.json())
             .then(response => {
-                setDataY(response.yoga)
-                setIsReady(true)
+                setDataY(response.yoga);
+                setIsReady(true);
             })
         fetch(serverAPI)
             .then(res => res.json())
             .then(response => {
-                setDataM(response.meditation)
-                setIsReady(true)
+                setDataM(response.meditation);
+                setIsReady(true);
             })
-    }, [])
+    }, []);  // eslint-disable-line
 
     const getSearchValue = (e) => {
-        setSearchValue(e)
+        setSearchValue(e);
     }
 
     useEffect(() => {
         const resultsY = dataY.filter(elt => elt.track.name.toLowerCase().includes(searchValue));
-        setSearchedDataY(resultsY)
-    }, [searchValue])
+        setSearchedDataY(resultsY);
+    }, [searchValue]);  // eslint-disable-line
 
     useEffect(() => {
         const resultsM = dataM.filter(elt => elt.track.name.toLowerCase().includes(searchValue));
-        setSearchedDataM(resultsM)
-    }, [searchValue])
+        setSearchedDataM(resultsM);
+    }, [searchValue]);  // eslint-disable-line
 
     if (isReady) {
         return (

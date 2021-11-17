@@ -1,36 +1,36 @@
-import './player.scss'
-import TopButtons from '../../components/topButtons/topButtons'
+import './player.scss';
+import TopButtons from '../../components/topButtons/topButtons';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const Player = (props) => {
-    const { serverAPI } = props
-    const { id } = useParams()
-    const { contentType } = useParams()
-    const [trackData, setTrackData] = useState(null)
-    const [isPlaying, setIsPlaying] = useState(false)
-    const [isReady, setIsReady] = useState(false)
+    const { serverAPI } = props;
+    const { id } = useParams();
+    const { contentType } = useParams();
+    const [trackData, setTrackData] = useState(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
         fetch(serverAPI)
             .then(res => res.json())
             .then(response => {
                 if (contentType === 'yoga') {
-                    setTrackData(response.yoga.filter(elt => elt.track.id === id)[0].track)
+                    setTrackData(response.yoga.filter(elt => elt.track.id === id)[0].track);
                 }
                 else if (contentType === 'meditation') {
-                    setTrackData(response.meditation.filter(elt => elt.track.id === id)[0].track)
+                    setTrackData(response.meditation.filter(elt => elt.track.id === id)[0].track);
                 }
                 setIsReady(true)
             })
-    }, [])
+    }, []);  // eslint-disable-line
 
     const playPauseAudio = () => {
         if (!isPlaying) {
-            document.getElementById('audio').play()
+            document.getElementById('audio').play();
         }
         else if (isPlaying) {
-            document.getElementById('audio').pause()
+            document.getElementById('audio').pause();
         }
     }
 

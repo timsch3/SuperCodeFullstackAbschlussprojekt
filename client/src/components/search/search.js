@@ -2,7 +2,7 @@ import './search.scss';
 import { useState } from 'react';
 
 const Search = (props) => {
-    const [searchValue, setSearchValue] = useState('');
+    const [searchValue, setSearchValue] = useState(''); // eslint-disable-line
 
     const { getSearchValue } = props;
 

@@ -1,16 +1,17 @@
-import '../style/style.scss'
-import Login from '../pages/login/login'
-import Sign from '../pages/sign/sign'
-import Welcome from '../pages/welcome/welcome'
-import Home from '../pages/home/home'
-import YogaMedi from '../pages/yogaMedi/yogaMedi'
-import YogaDetail from '../pages/details/YogaDetails'
-import MediDetail from '../pages/details/MediDetail'
-import Music from '../pages/music/music'
-import User from '../pages/user/user'
-import Player from '../pages/player/player'
+import '../style/style.scss';
+import Login from '../pages/login/login';
+import Sign from '../pages/sign/sign';
+import Welcome from '../pages/welcome/welcome';
+import Home from '../pages/home/home';
+import Yoga from '../pages/yoga/yoga';
+import Meditate from '../pages/meditate/meditate';
+import YogaDetail from '../pages/details/YogaDetails';
+import MediDetail from '../pages/details/MediDetail';
+import Music from '../pages/music/music';
+import User from '../pages/user/user';
+import Player from '../pages/player/player';
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 import {
   BrowserRouter,
@@ -18,13 +19,13 @@ import {
   Route
 } from "react-router-dom";
 
-const serverAPI = 'http://localhost:3000/'
+const serverAPI = 'http://localhost:3000/';
 
 function App() {
 
-  const [user, setUser] = useState({})
-  const [error, setError] = useState(null)
-  const [authenticated, setAuthenticated] = useState(false)
+  const [user, setUser] = useState({});
+  const [error, setError] = useState(null); // eslint-disable-line
+  const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:3000/auth/login/success", {
@@ -41,15 +42,14 @@ function App() {
         throw new Error("failed to authenticate user");
       })
       .then(responseJson => {
-        setAuthenticated(true)
-        setUser(responseJson.user)
+        setAuthenticated(true);
+        setUser(responseJson.user);
       })
       .catch(error => {
-        setAuthenticated(false)
-        setError("Failed to authenticate user")
-        console.log(error)
+        setAuthenticated(false);
+        setError("Failed to authenticate user");
       });
-  }, [])
+  }, []);
 
   return (
     <>
@@ -62,7 +62,7 @@ function App() {
               />} />
             <Route path="/welcome"
               element={<Welcome
-                username= {user.username}
+                username={user.username}
               />} />
             <Route path="/home"
               element={<Home
@@ -70,23 +70,19 @@ function App() {
                 serverAPI={serverAPI}
               />} />
             <Route path="/yoga"
-              element={<YogaMedi
+              element={<Yoga
                 serverAPI={serverAPI}
-                titel={'Yoga'}
-                description={'Find your inner zen from annywhere.'}
               />} />
             <Route path="/yoga-details" element={<YogaDetail />} />
             <Route path="/meditate"
-              element={<YogaMedi
+              element={<Meditate
                 serverAPI={serverAPI}
-                titel={'Meditate'}
-                description={'Audio-only meditation techniques to help you minimize your screen time and practice on the go.'}
               />} />
             <Route path="/meditate-details"
               element={<MediDetail />} />
             <Route path="/music" element={<Music />} />
             <Route path="/user" element={<User username={user.username} userphoto={user.photo} serverAPI={serverAPI} />} />
-            <Route path="/player/:contentType/:id" element={<Player  serverAPI={serverAPI} />} />
+            <Route path="/player/:contentType/:id" element={<Player serverAPI={serverAPI} />} />
           </Routes>
         </BrowserRouter>
         :
