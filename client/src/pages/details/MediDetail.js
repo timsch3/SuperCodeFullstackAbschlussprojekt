@@ -67,10 +67,6 @@ const MediDetail = () => {
                 </div>
             </section>
             <Nav />
-
-
-
-
         </div>
     );
 }
