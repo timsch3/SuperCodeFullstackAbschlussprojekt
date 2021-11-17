@@ -8,6 +8,9 @@ import api from '../../api/index'
 
 const Home = (props) => {
     const { serverAPI } = props
+    const {username} = props
+    const {userphoto} = props
+    console.log(username,userphoto)
     const [data, setData] = useState(null)
     const [isReady, setIsReady] = useState()
     useEffect(() => {

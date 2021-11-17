@@ -19,7 +19,7 @@ import Button from '../../components/button/button';
 const Login = (props) => {
 
     const { username } = props;
-
+    console.log(username)
     const [isToggled, setIsToggled] = useState(true);
     const [value, setValue] = useState(new Date());
     const toggle = () => setIsToggled(!isToggled);

@@ -62,7 +62,7 @@ function App() {
               />} />
             <Route path="/welcome"
               element={<Welcome
-                username={user.username}
+                username= {user.username}
               />} />
             <Route path="/home"
               element={<Home
@@ -85,8 +85,8 @@ function App() {
             <Route path="/meditate-details"
               element={<MediDetail />} />
             <Route path="/music" element={<Music />} />
-            <Route path="/user" element={<User serverAPI={serverAPI} />} />
-            <Route path="/player/:contentType/:id" element={<Player serverAPI={serverAPI} />} />
+            <Route path="/user" element={<User username={user.username} userphoto={user.photo} serverAPI={serverAPI} />} />
+            <Route path="/player/:contentType/:id" element={<Player  serverAPI={serverAPI} />} />
           </Routes>
         </BrowserRouter>
         :
