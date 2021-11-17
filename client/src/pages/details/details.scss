@@ -1,75 +1,29 @@
-.icon__flex{
-    display: flex;
-    align-items: center;
-}
-
-.yogaDetail__icon{
-    margin-left: 5%;
-        a{
-        border-radius: 50%;
-        border:1px solid white 0.6;
-        padding: 10px;
-        background: whitesmoke;
-        opacity: .6;
-        }
-
-    img{
-        height: 15px;
-        width: 15px;
-    }      
-}
-
-.yogaDetail__icon2{
-    
-    margin-left: 55%;
-    a{
-    border-radius: 50%;
-    border: 1px solid #E28F83 0.6;
-    padding: 10px;
-    background: #E28F83;
-    opacity: .6;
-    margin-right: 15px;
-
-    }
-    img{
-        height: 15px;
-        width: 15px;
+#yoga-details-top-section {
+    img {
+        width: 100px;
     }
 }
-
 
 .yogaDetail__main {
-    margin-top: 30px;
-    margin-left: 5%;
-    margin-right: 5%;
-    p{
-        margin-top: 15px;
+    padding: 0 15px;
+    h1 {
+        padding: 15px 0;
     }
 }
 
-.detail__flex{
+.yogaDetail__flex_space {
     display: flex;
-    margin-top: 30px;
+    justify-content: space-evenly;
     align-items: center;
-    p{
-        padding-left: 7px; 
-        padding-right: 50px; 
-        
+    p {
+        white-space: nowrap;
     }
-    
 }
 
-.yogaDetail__flex_space{
+.detail__flex {
     display: flex;
-   padding-left: 20px;
 }
 
-.play__icon{
-    margin: 6% 5%;
-    border-radius: 50%;
-    border:1px solid grey 0.6;
-    padding: 10px;
-    background: lightgrey;
-    opacity: .6;
-
+.yogaDetail__icon {
+    padding-right: 5px;
 }
