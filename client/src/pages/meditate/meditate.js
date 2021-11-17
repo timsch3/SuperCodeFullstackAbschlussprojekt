@@ -93,7 +93,7 @@ const YogaMedi = (props) => {
                         <Daily />
                     </div>
                     <div className="search-content">
-                        <ContentSearch data={searchValue > 0 ? searchedData : data} />
+                        <ContentSearch contentData={searchValue > 0 ? searchedData : data} contentType='meditation' />
                     </div>
                 </div>
                 :

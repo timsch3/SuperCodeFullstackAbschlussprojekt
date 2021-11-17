@@ -1,16 +1,19 @@
 import './contentSearch.scss'
+import { Link } from 'react-router-dom';
 
 const ContentSearch = (props) => {
 
-    const { data } = props
+    const { contentData } = props
 
     return (
         <div className="content-search">
-            {data.map((elt, i) => (
-                <div key={i} className="content-search-card">
-                    <h2>{elt.track.name}</h2>
-                    <img src={elt.track.album.images[0].url} alt={elt.track.album.name} />
-                </div>
+            {contentData.map((elt, i) => (
+                <Link to={`/player/${props.contentType}/${elt.track.id}`}>
+                    <div key={i} className="content-search-card">
+                        <h2>{elt.track.name}</h2>
+                        <img src={elt.track.album.images[0].url} alt={elt.track.album.name} />
+                    </div>
+                </Link>
             ))}
         </div>
     );

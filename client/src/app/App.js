@@ -19,7 +19,7 @@ import {
   Route
 } from "react-router-dom";
 
-const serverAPI = 'https://supercode-fs-abschl-backend.herokuapp.com/';
+const serverAPI = 'http://localhost:3000/';
 
 function App() {
 
@@ -30,6 +30,7 @@ function App() {
   useEffect(() => {
     fetch(`${serverAPI}auth/login/success`, {
       method: "GET",
+      mode: 'cors',
       credentials: "include",
       headers: {
         Accept: "application/json",
