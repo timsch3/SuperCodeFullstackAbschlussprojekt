@@ -12,7 +12,7 @@ Ob durch Audio-Guide geführte Meditationen, eine Playlist mit meditativen Musik
 
 # Developer Team :computer:<br/>
 
-**Fantastic Four** <br/><br/>
+**Relax Group** <br/><br/>
 :superhero_woman:  Chenyan Lin<br/>
 :supervillain_man: Tim Schilling<br/>
 :supervillain_man: Uladi Siauko<br/>
