@@ -14,7 +14,7 @@ Ob durch Audio-Guide geführte Meditationen, eine Playlist mit meditativen Musik
 
 **Relax Group  :bath:** <br/><br/>
 :superhero_woman:   Chenyan Lin (Front-end Scrumb Yogini)<br/>
-:supervillain_man:  Tim Schilling (Front-end Devlopment Yogi)<br/>
-:supervillain_man:  Uladi Siauko (Front-end Git-master Guru)<br/>
-:supervillain_man:  Hisham Diab (Backend-Master)<br/>
+:superhero_man:  Tim Schilling (Front-end Devlopment Yogi)<br/>
+:genie_man:  Uladi Siauko (Front-end Git-master Guru)<br/>
+:mage_man:  Hisham Diab (Backend-Master)<br/>
 :supervillain_man:  Tulio Aguiar (Front-end Yogi)<br/>
