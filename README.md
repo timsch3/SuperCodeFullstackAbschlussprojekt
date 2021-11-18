@@ -7,7 +7,7 @@ Brauchst du ein bisschen time out :lotus_position_man: ?***
 ***Der Nutzer soll in der App eine Auswahl an verschiedene Kategorien angeboten bekommen zum geistigem Training oder zur Entspannung.
 Ob durch Audio-Guide geführte Meditationen, eine Playlist mit meditativen Musikstücken oder auch körperliche Übungen zur Entspannung - nur Gutes für die Seele!***
 
-
+# :rocket:
 **Unsere Zukunftsplanung entwickelt Verbesserungen unserer Website und Dienstleistungen** <br/>
 
 # Developer Team :computer:<br/>
