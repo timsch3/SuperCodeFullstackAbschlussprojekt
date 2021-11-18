@@ -25,7 +25,7 @@ Ob durch Audio-Guide geführte Meditationen, eine Playlist mit meditativen Musik
 ![](https://img.shields.io/badge/Shell-Bash-informational?style=flat&logo=gnu-bash&logoColor=white&color=2bbc8a)
 ![](https://img.shields.io/badge/Frontend-HTML-informational?style=flat&logo=gnu-bash&logoColor=white&color=2bbc8a)
 ![](https://img.shields.io/badge/CSS-SCSS-informational?style=flat&logo=gnu-bash&logoColor=white&color=2bbc8a)
-![](https://img.shields.io/badge/JSFRAME-React-informational?style=flat&logo=gnu-bash&logoColor=white&color=2bbc8a)<br/>
+![](https://img.shields.io/badge/JSFRAME-React-informational?style=flat&logo=gnu-bash&logoColor=white&color=2bbc8a)<br/><br/>
 ![](https://img.shields.io/badge/Backend-Node.JS-informational?style=flat&logo=gnu-bash&logoColor=white&color=2bbc8a)
 ![](https://img.shields.io/badge/Package-npm-informational?style=flat&logo=gnu-bash&logoColor=white&color=2bbc8a)
 ![](https://img.shields.io/badge/VersionControl-GIT-informational?style=flat&logo=gnu-bash&logoColor=white&color=2bbc8a)
