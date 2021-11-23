@@ -32,7 +32,7 @@ passport.use(new GoogleStrategy({
             googleid: profile.id,
             username: profile.name.givenName,
             name:profile.name.familyName,
-            photo:profile.photos.value
+            photo:profile._json.picture 
     
             }).save()
               .then(() => {
